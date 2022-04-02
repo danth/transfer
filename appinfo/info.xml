@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>transfer</id>
+    <name>Transfer</name>
+    <summary>Add a file to Nextcloud from a web link.</summary>
+    <description><![CDATA[Add a file to Nextcloud from a web link.]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="danthwaites30@btinternet.com" homepage="https://github.com/danth">Daniel Thwaites</author>
+    <namespace>Transfer</namespace>
+    <category>files</category>
+    <category>tools</category>
+    <website>https://github.com/danth/nextcloud-transfer</website>
+    <bugs>https://github.com/danth/nextcloud-transfer/issues</bugs>
+    <dependencies>
+        <nextcloud min-version="23" max-version="23"/>
+    </dependencies>
+</info>
