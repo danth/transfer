@@ -2,8 +2,8 @@
 return [
     'routes' => [
 	[
-	    'name' => 'transfer#queue',
-	    'url' => 'ajax/queue.php',
+	    'name' => 'transfer#transfer',
+	    'url' => 'ajax/transfer.php',
 	    'verb' => 'POST'
 	]
     ]

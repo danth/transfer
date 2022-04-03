@@ -1,7 +1,8 @@
 <script>
 	import axios from "@nextcloud/axios";
-	import { translate as t } from "@nextcloud/l10n";
+	import { formatFileSize } from "@nextcloud/files";
 	import { generateFilePath } from "@nextcloud/router";
+	import { translate as t } from "@nextcloud/l10n";
 	import { onDestroy, onMount } from "svelte";
 	const OC = window.OC;
 
@@ -10,6 +11,7 @@
 	$: loading = false;
 	$: url = "";
 	$: path = null;
+	$: size = "";
 	$: state = null;
 	let reloadHandler = () => null;
 
@@ -41,7 +43,7 @@
 		stateStore.set("loading");
 		axios
 			.post(
-				generateFilePath("transfer", "ajax", "queue.php"),
+				generateFilePath("transfer", "ajax", "transfer.php"),
 				{ path, url }
 			)
 			.catch((error) => {
@@ -49,11 +51,16 @@
 				stateStore.set("api_error");
 			})
 			.then((response) => {
-				if (response.data.success) {
-					stateStore.set("success");
-					reloadHandler();
+				if (response.data.size > 0) {
+					size = formatFileSize(response.data.size);
 				} else {
-					stateStore.set("transfer_error");
+					size = t("transfer", "an unknown size");
+				}
+
+				stateStore.set(response.data.status);
+
+				if (response.data.status == "done") {
+					reloadHandler();
 				}
 			});
 	};
@@ -91,11 +98,16 @@
 			</div>
 		</form>
 	{/if}
-	{#if state === "success"}
+	{#if state === "queued"}
 		<div>
 			<p>{t(
 				"transfer",
-				"Transfer complete! {path} is now saved in your Nextcloud.",
+				"Because the download is {size}, it has been queued for transfer in the background.",
+				{ size }
+			)}</p>
+			<p>{t(
+				"transfer",
+				"{path} will appear in your files when the job is finished.",
 				{ path }
 			)}</p>
 		</div>
@@ -105,9 +117,29 @@
 			</a>
 		</div>
 	{/if}
-	{#if state === "transfer_error"}
+	{#if state === "done"}
 		<div>
-			<p>{t("transfer", "There was an error transferring the URL. Perhaps you typed it incorrectly?")}</p>
+			<p>{t(
+				"transfer",
+				"Successfully transferred {size}!",
+				{ size }
+			)}</p>
+			<p>{t(
+				"transfer",
+				"{path} is now available in your files.",
+				{ path }
+			)}</p>
+		</div>
+		<div class="oc-dialog-buttonrow onebutton">
+			<a on:click|preventDefault={close} class="cancel button">
+				{t("transfer", "Close")}
+			</a>
+		</div>
+	{/if}
+	{#if state === "failed"}
+		<div>
+			<p>{t("transfer", "There was an error during the file transfer.")}</p>
+			<p>{t("transfer", "Perhaps you typed the URL incorrectly.")}</p>
 		</div>
 		<div class="oc-dialog-buttonrow onebutton">
 			<a on:click|preventDefault={close} class="cancel button">
@@ -117,7 +149,7 @@
 	{/if}
 	{#if state === "api_error"}
 		<div>
-			<p>{t("transfer", "There was an error sending the URL to Nextcloud.")}</p>
+			<p>{t("transfer", "There was an error during submission of the URL to Nextcloud.")}</p>
 		</div>
 		<div class="oc-dialog-buttonrow onebutton">
 			<a on:click|preventDefault={close} class="cancel button">
