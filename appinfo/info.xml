@@ -4,7 +4,15 @@
     <id>transfer</id>
     <name>Transfer</name>
     <summary>Add a file to Nextcloud from a web link.</summary>
-    <description><![CDATA[Add a file to Nextcloud from a web link.]]></description>
+    <description>
+        <![CDATA[This app allows you to have a file from the Internet
+            transferred directly into your Nextcloud, without first having
+            to download it to your personal device in order to
+            upload it. You simply enter the download link and the
+            transfer happens on the server side, making it possible
+            to leave downloads running in the background even when
+            your personal computer is switched off.]]>
+    </description>
     <version>0.0.1</version>
     <licence>agpl</licence>
     <author mail="danthwaites30@btinternet.com" homepage="https://github.com/danth">Daniel Thwaites</author>
