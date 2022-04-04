@@ -1,17 +1,16 @@
 <?php
 namespace OCA\Transfer\Service;
 
+use GuzzleHttp\Exception\BadResponseException;
 use OC\Files\Filesystem;
+use OCP\Http\Client\IClientService;
+use OCP\Http\Client\LocalServerException;
 
 class TransferService {
-	private function getSuccess($curl) {
-		$code = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
-		return (
-			$code == 200 ||
-			$code == 201 ||
-			$code == 203 ||
-			($code >= 300 && $code <= 308)
-		);
+	protected $clientService;
+
+	public function __construct(IClientService $clientService) {
+		$this->clientService = $clientService;
 	}
 
 	/**
@@ -19,33 +18,30 @@ class TransferService {
 	 * @return Whether the request succeeded, and the size of the file if known.
 	 */
 	public function getSize(string $url) {
-		$curl = curl_init($url);
+		$client = $this->clientService->newClient();
+		
+		try {
+			$response = $client->head($url);
 
-		// Issue a HEAD request and follow any redirects.
-		curl_setopt($curl, CURLOPT_NOBODY, true);
-		curl_setopt($curl, CURLOPT_HEADER, true);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0");
-
-		curl_exec($curl);
-
-		$code = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
-		if ($code == 405) {
+		} catch (BadResponseException $error) {
+			// The HTTP request had an unsuccessful response code.
+			
 			/* 405 means that HEAD requests are not supported by the remote server.
-			 * Rather than returning an unsuccessful result, return an unknown size.
+			 * If we receive a 405, the request is marked as a success because this
+			 * does not indicate that the actual download will fail.
 			 */
-			$success = true;
-			$size = -1;
-		} else {
-			$success = $this->getSuccess($curl);
+			$response = $error->getResponse();
+			$success = $response->getStatusCode() == 405;
+
+			return [$success, -1];
+
+		} catch (LocalServerException) {
+			// The user tried to access `localhost` or similar.
+			return [false, -1];
 		}
 
-		$size = curl_getinfo($curl, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
-
-		curl_close($curl);
-
-		return [$success, $size];
+		$length = $response->getHeader("Content-Length");
+		return [true, $length];
 	}
 
 	/**
@@ -58,26 +54,22 @@ class TransferService {
 
 		$realPath = Filesystem::getView()->getLocalFile($path);
 
-		$curl = curl_init($url);
+		$client = $this->clientService->newClient();
 
-		$file = fopen($realPath, "w");
-		curl_setopt($curl, CURLOPT_FILE, $file);
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0");
-
-		curl_exec($curl);
-
-		$success = $this->getSuccess($curl);
-
-		fclose($file);
-		curl_close($curl);
-
-		$size = -1;
-		if ($success) {
-			Filesystem::touch($path);
-			$size = filesize($realPath);
+		try {
+			$response = $client->get($url, ["sink" => $realPath]);
+		} catch (BadResponseException) {
+			// The HTTP request had an unsuccessful response code.
+			return [false, -1];
+		} catch (LocalServerException) {
+			// The user tried to access `localhost` or similar.
+			return [false, -1];
 		}
 
-		return [$success, $size];
+		Filesystem::touch($path);
+
+		$size = filesize($realPath);
+
+		return [true, $size];
 	}
 }
