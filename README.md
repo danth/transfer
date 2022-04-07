@@ -12,19 +12,18 @@ To start a download, select "Transfer file from URL" from the new file menu.
 
 ![This button can be found at the top of the file list.](img/instructions/menu.png)
 
-Choose a name to save the file as, and type it into the text box which appears:
+A prompt will appear for you to paste the download link.
 
-![The file name prompt appears within the menu.](img/instructions/file_name.png)
+You may also choose a custom name to save the transferred file as.
+If you leave this blank, a name will be generated based on the link.
 
-Press enter or click the arrow to continue.
-
-Now, you will see a second text box:
-
-![The download link prompt pops up in the middle of the screen.](img/instructions/download_link.png)
-
-Paste the download link for the file here.
+![The prompt appears in the middle of the screen.](img/instructions/prompt.png)
 
 Finally, click "Transfer".
+
+The download will happen in a background job, which should start within five minutes
+if your server is set up correctly. If you want transfers to start sooner, you will
+need to configure your server so that `cron.php` is triggered more often.
 
 ## Development information
 
