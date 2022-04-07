@@ -1,43 +1,66 @@
 <script>
 	import axios from "@nextcloud/axios";
+	import { joinPaths } from "@nextcloud/paths"; 
 	import { generateFilePath } from "@nextcloud/router";
 	import { translate as t } from "@nextcloud/l10n";
+	import { get } from 'svelte/store'
 	import { onDestroy, onMount } from "svelte";
 	const OC = window.OC;
 
-	import { pathStore, stateStore } from "../store";
+	import { directoryStore, stateStore } from "../store";
 
-	$: loading = false;
-	$: url = "";
-	$: path = null;
+	// The current state of the dialog.
 	$: state = null;
-	let reloadHandler = () => null;
-
-	let unsubscribeFilename;
 	let unsubscribeState;
 	onMount(() => {
-		unsubscribeFilename = pathStore.subscribe(
-			value => { path = value; }
-		);
 		unsubscribeState = stateStore.subscribe(
 			value => { state = value; }
 		);
 	});
 	onDestroy(() => {
-		unsubscribeFilename();
 		unsubscribeState();
 	});
+
+	$: filename = "";
+
+	// This will be used if the user does not enter their own name.
+	$: defaultFilename = t("transfer", "file.txt");
+
+	let url = "";
+	// When the URL is edited, update the default filename.
+	$: url, setDefaultFilename();
+
+	function setDefaultFilename() {
+		let segments;
+		try {
+			segments = new URL(url).pathname.split('/');
+		} catch (TypeError) {
+			// Do nothing if the URL fails to parse.
+			return;
+		}
+
+		// The || handles the possibility of a trailing slash.
+		defaultFilename = segments.pop() || segments.pop();
+	}
 
 	function close() {
 		stateStore.set(null);
 	};
-
+	
 	function submit() {
 		stateStore.set("loading");
 		axios
 			.post(
 				generateFilePath("transfer", "ajax", "transfer.php"),
-				{ path, url }
+				{
+					/* If the user chose their own filename, use that,
+					 * otherwise use the default.
+					 */
+					path: filename
+						? joinPaths(get(directoryStore), filename)
+						: joinPaths(get(directoryStore), defaultFilename),
+					url
+				}
 			)
 			.catch((error) => {
 				console.error(error);
@@ -60,15 +83,24 @@
 			method="post">
 			<div>
 				<label>
-					{t("transfer", "Enter download link for {path}", { path })}
+					{t("transfer", "Download link")}
 					<br />
 					<input
 						type="text"
-						style="width: 100%;"
-						class="input-wide"
+						style="width: 100%; min-width: 25em;"
 						bind:value={url}
 						autofocus
 						placeholder={t("transfer", "http://example.com/file.txt")} />
+				</label>
+				<label>
+					{t("transfer", "File name")}
+					<br />
+					<input
+						type="text"
+						style="width: 100%; min-width: 15em;"
+						bind:value={filename}
+						autofocus
+						placeholder={defaultFilename} />
 				</label>
 			</div>
 			<div class="oc-dialog-buttonrow twobuttons">
@@ -84,7 +116,7 @@
 	{#if state === "queued"}
 		<div>
 			<p>{t("transfer", "The download has been queued to run in the background.")}</p>
-			<p>{t("transfer", "{path} will appear in your files when the job is finished.", { path })}</p>
+			<p>{t("transfer", "{filename} will appear in your files when the job is finished.", { filename })}</p>
 		</div>
 		<div class="oc-dialog-buttonrow onebutton">
 			<a on:click|preventDefault={close} class="cancel button">
