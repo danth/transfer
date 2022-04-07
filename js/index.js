@@ -2,7 +2,7 @@ import { joinPaths } from "@nextcloud/paths";
 import { translate as t } from "@nextcloud/l10n";
 
 import App from "./views/App.svelte";
-import { pathStore, reloadHandlerStore, stateStore } from "./store";
+import { pathStore, stateStore } from "./store";
 
 new App({
 	target: document.body,
@@ -24,10 +24,6 @@ window.OC.Plugins.register("OCA.Files.NewFileMenu", {
 			actionHandler: (filename) => {
 				const directory = fileList.getCurrentDirectory();
 				pathStore.set(joinPaths(directory, filename));
-
-				reloadHandlerStore.set(() => {
-					fileList.reload();
-				});
 
 				stateStore.set("input");
 			},

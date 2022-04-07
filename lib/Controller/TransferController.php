@@ -38,48 +38,12 @@ class TransferController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function transfer(string $path, string $url) {
-		[$success, $size] = $this->service->getSize($url);
+		$this->jobList->add(TransferJob::class, [
+			"userId" => $this->userId,
+			"path" => $path,
+			"url" => $url,
+		]);
 
-		if (!$success) {
-			// The HTTP response code when we asked for the size indicated failure.
-
-			return new DataResponse([
-				"status" => "failed",
-				"size" => $size,
-			], Http::STATUS_OK);
-		}
-
-		if ($size > 26214400) {
-			// Queue transfers larger than 25MiB to run in the background.
-
-			$this->jobList->add(TransferJob::class, [
-				"userId" => $this->userId,
-				"path" => $path,
-				"url" => $url,
-			]);
-
-			return new DataResponse([
-				"status" => "queued",
-				"size" => $size,
-			], Http::STATUS_OK);
-
-		} else {
-			/* Run smaller transfers immediately.
-			 *
-			 * This will also happen for unknown sizes, which usually occur because
-			 * the remote server is generating a webpage on-the-fly.
-			 *
-			 * The actual size of the downloaded file is measured so that we can
-			 * provide a value to the client even if the size was unknown before the
-			 * transfer.
-			 */
-
-			[$success, $size] = $this->service->transfer($this->userId, $path, $url);
-
-			return new DataResponse([
-				"status" => $success ? "done" : "failed",
-				"size" => $size,
-			], Http::STATUS_OK);
-		}
+		return new DataResponse(true, Http::STATUS_OK);
 	}
 }

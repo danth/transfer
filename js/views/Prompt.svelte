@@ -1,23 +1,20 @@
 <script>
 	import axios from "@nextcloud/axios";
-	import { formatFileSize } from "@nextcloud/files";
 	import { generateFilePath } from "@nextcloud/router";
 	import { translate as t } from "@nextcloud/l10n";
 	import { onDestroy, onMount } from "svelte";
 	const OC = window.OC;
 
-	import { pathStore, reloadHandlerStore, stateStore } from "../store";
+	import { pathStore, stateStore } from "../store";
 
 	$: loading = false;
 	$: url = "";
 	$: path = null;
-	$: size = "";
 	$: state = null;
 	let reloadHandler = () => null;
 
 	let unsubscribeFilename;
 	let unsubscribeState;
-	let unsubscribeRefreshHandler;
 	onMount(() => {
 		unsubscribeFilename = pathStore.subscribe(
 			value => { path = value; }
@@ -25,14 +22,10 @@
 		unsubscribeState = stateStore.subscribe(
 			value => { state = value; }
 		);
-		unsubscribeRefreshHandler = reloadHandlerStore.subscribe(
-			value => { reloadHandler = value; }
-		);
 	});
 	onDestroy(() => {
 		unsubscribeFilename();
 		unsubscribeState();
-		unsubscribeRefreshHandler();
 	});
 
 	function close() {
@@ -51,17 +44,7 @@
 				stateStore.set("api_error");
 			})
 			.then((response) => {
-				if (response.data.size > 0) {
-					size = formatFileSize(response.data.size);
-				} else {
-					size = t("transfer", "an unknown size");
-				}
-
-				stateStore.set(response.data.status);
-
-				if (response.data.status == "done") {
-					reloadHandler();
-				}
+				stateStore.set("queued");
 			});
 	};
 </script>
@@ -100,46 +83,8 @@
 	{/if}
 	{#if state === "queued"}
 		<div>
-			<p>{t(
-				"transfer",
-				"Because the download is {size}, it has been queued for transfer in the background.",
-				{ size }
-			)}</p>
-			<p>{t(
-				"transfer",
-				"{path} will appear in your files when the job is finished.",
-				{ path }
-			)}</p>
-		</div>
-		<div class="oc-dialog-buttonrow onebutton">
-			<a on:click|preventDefault={close} class="cancel button">
-				{t("transfer", "Close")}
-			</a>
-		</div>
-	{/if}
-	{#if state === "done"}
-		<div>
-			<p>{t(
-				"transfer",
-				"Successfully transferred {size}!",
-				{ size }
-			)}</p>
-			<p>{t(
-				"transfer",
-				"{path} is now available in your files.",
-				{ path }
-			)}</p>
-		</div>
-		<div class="oc-dialog-buttonrow onebutton">
-			<a on:click|preventDefault={close} class="cancel button">
-				{t("transfer", "Close")}
-			</a>
-		</div>
-	{/if}
-	{#if state === "failed"}
-		<div>
-			<p>{t("transfer", "There was an error during the file transfer.")}</p>
-			<p>{t("transfer", "Perhaps you typed the URL incorrectly.")}</p>
+			<p>{t("transfer", "The download has been queued to run in the background.")}</p>
+			<p>{t("transfer", "{path} will appear in your files when the job is finished.", { path })}</p>
 		</div>
 		<div class="oc-dialog-buttonrow onebutton">
 			<a on:click|preventDefault={close} class="cancel button">
