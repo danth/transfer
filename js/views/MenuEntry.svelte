@@ -3,11 +3,11 @@
 	import { translate as t } from "@nextcloud/l10n";
 	const OC = window.OC;
 
-	import { stateStore } from "../store";
+	import { visibleStore } from "../store";
   
   function open(event) {
     // Open our dialog.
-    stateStore.set("input");
+    visibleStore.set(true);
     
     // Close the "new file" menu.
     OC.hideMenus();

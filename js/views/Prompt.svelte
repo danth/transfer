@@ -1,5 +1,7 @@
 <script>
 	import axios from "@nextcloud/axios";
+	import { showInfo, showError } from '@nextcloud/dialogs';
+	import "@nextcloud/dialogs/styles/toast.scss";
 	import { joinPaths } from "@nextcloud/paths"; 
 	import { generateFilePath } from "@nextcloud/router";
 	import { translate as t } from "@nextcloud/l10n";
@@ -7,18 +9,17 @@
 	import { onDestroy, onMount } from "svelte";
 	const OC = window.OC;
 
-	import { directoryStore, stateStore } from "../store";
+	import { directoryStore, visibleStore } from "../store";
 
-	// The current state of the dialog.
-	$: state = null;
-	let unsubscribeState;
+	$: visible = false;
+	let unsubscribeVisible;
 	onMount(() => {
-		unsubscribeState = stateStore.subscribe(
-			value => { state = value; }
+		unsubscribeVisible = visibleStore.subscribe(
+			value => { visible = value; }
 		);
 	});
 	onDestroy(() => {
-		unsubscribeState();
+		unsubscribeVisible();
 	});
 
 	$: filename = "";
@@ -44,11 +45,11 @@
 	}
 
 	function close() {
-		stateStore.set(null);
+		visibleStore.set(false);
 	};
 	
 	function submit() {
-		stateStore.set("loading");
+		visibleStore.set(false);
 		axios
 			.post(
 				generateFilePath("transfer", "ajax", "transfer.php"),
@@ -62,75 +63,52 @@
 					url
 				}
 			)
+			.then((response) => {
+				showInfo(t("transfer", "Transfer queued to run in the background."));
+			})
 			.catch((error) => {
 				console.error(error);
-				stateStore.set("api_error");
-			})
-			.then((response) => {
-				stateStore.set("queued");
+				showError(error);
 			});
 	};
 </script>
 
+{#if visible}
 <div class="oc-dialog-dim" />
-<div
-	class={`oc-dialog ${state === "loading" ? "icon-loading" : ""}`}
-	style="position: fixed;">
-	{#if state === "input"}
-		<form
-			action={OC.generateUrl('/')}
-			on:submit|preventDefault={submit}
-			method="post">
-			<div>
-				<label>
-					{t("transfer", "Download link")}
-					<br />
-					<input
-						type="text"
-						style="width: 100%; min-width: 25em;"
-						bind:value={url}
-						autofocus
-						placeholder={t("transfer", "http://example.com/file.txt")} />
-				</label>
-				<label>
-					{t("transfer", "File name")}
-					<br />
-					<input
-						type="text"
-						style="width: 100%; min-width: 15em;"
-						bind:value={filename}
-						placeholder={defaultFilename} />
-				</label>
-			</div>
-			<div class="oc-dialog-buttonrow twobuttons">
-				<a on:click|preventDefault={close} class="cancel button">
-					{t("transfer", "Cancel")}
-				</a>
-				<a on:click|preventDefault={submit} class="primary button">
-					{t("transfer", "Transfer")}
-				</a>
-			</div>
-		</form>
-	{/if}
-	{#if state === "queued"}
+<div class="oc-dialog" style="position: fixed;">
+	<form
+		action={OC.generateUrl('/')}
+		on:submit|preventDefault={submit}
+		method="post">
 		<div>
-			<p>{t("transfer", "The download has been queued to run in the background.")}</p>
-			<p>{t("transfer", "{filename} will appear in your files when the job is finished.", { filename })}</p>
+			<label>
+				{t("transfer", "Download link")}
+				<br />
+				<input
+					type="text"
+					style="width: 100%; min-width: 25em;"
+					bind:value={url}
+					autofocus
+					placeholder={t("transfer", "http://example.com/file.txt")} />
+			</label>
+			<label>
+				{t("transfer", "File name")}
+				<br />
+				<input
+					type="text"
+					style="width: 100%; min-width: 15em;"
+					bind:value={filename}
+					placeholder={defaultFilename} />
+			</label>
 		</div>
-		<div class="oc-dialog-buttonrow onebutton">
+		<div class="oc-dialog-buttonrow twobuttons">
 			<a on:click|preventDefault={close} class="cancel button">
-				{t("transfer", "Close")}
+				{t("transfer", "Cancel")}
+			</a>
+			<a on:click|preventDefault={submit} class="primary button">
+				{t("transfer", "Transfer")}
 			</a>
 		</div>
-	{/if}
-	{#if state === "api_error"}
-		<div>
-			<p>{t("transfer", "There was an error during submission of the URL to Nextcloud.")}</p>
-		</div>
-		<div class="oc-dialog-buttonrow onebutton">
-			<a on:click|preventDefault={close} class="cancel button">
-				{t("transfer", "Close")}
-			</a>
-		</div>
-	{/if}
+	</form>
 </div>
+{/if}

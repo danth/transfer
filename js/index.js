@@ -1,12 +1,12 @@
 import { translate as t } from "@nextcloud/l10n";
 
-import App from "./views/App.svelte";
 import MenuEntry from "./views/MenuEntry.svelte";
+import Prompt from "./views/Prompt.svelte";
 import { directoryStore } from "./store";
 
 
 // This contains the dialog, when it is active.
-new App({
+new Prompt({
 	target: document.body,
 	props: {},
 })

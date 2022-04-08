@@ -1,6 +1,7 @@
 import commonjs from "@rollup/plugin-commonjs";
 import nodePolyfills from "rollup-plugin-polyfill-node";
 import resolve from "@rollup/plugin-node-resolve";
+import styles from "rollup-plugin-styles";
 import svelte from "rollup-plugin-svelte";
 
 export default {
@@ -13,6 +14,7 @@ export default {
 		commonjs(),
 		nodePolyfills(),
 		resolve(),
+		styles(),
 		svelte(),
 	],
 };
