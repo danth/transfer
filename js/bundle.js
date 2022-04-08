@@ -23448,7 +23448,6 @@
 				attr(input1, "type", "text");
 				set_style(input1, "width", "100%");
 				set_style(input1, "min-width", "15em");
-				input1.autofocus = true;
 				attr(input1, "placeholder", /*defaultFilename*/ ctx[1]);
 				attr(a0, "class", "cancel button");
 				attr(a1, "class", "primary button");
@@ -23479,7 +23478,7 @@
 				append(div1, a0);
 				append(div1, t9);
 				append(div1, a1);
-				input1.focus();
+				input0.focus();
 
 				if (!mounted) {
 					dispose = [
@@ -23514,7 +23513,7 @@
 		};
 	}
 
-	// (116:1) {#if state === "queued"}
+	// (115:1) {#if state === "queued"}
 	function create_if_block_1(ctx) {
 		let div0;
 		let p0;
@@ -23571,7 +23570,7 @@
 		};
 	}
 
-	// (127:1) {#if state === "api_error"}
+	// (126:1) {#if state === "api_error"}
 	function create_if_block$1(ctx) {
 		let div0;
 		let p;

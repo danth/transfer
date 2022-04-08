@@ -99,7 +99,6 @@
 						type="text"
 						style="width: 100%; min-width: 15em;"
 						bind:value={filename}
-						autofocus
 						placeholder={defaultFilename} />
 				</label>
 			</div>
