@@ -3,15 +3,15 @@
 	import { translate as t } from "@nextcloud/l10n";
 	const OC = window.OC;
 
-	import { visibleStore } from "../store";
+  export let openHandler;
   
   function open(event) {
     // Open our dialog.
-    visibleStore.set(true);
-    
+    openHandler();    
+
     // Close the "new file" menu.
     OC.hideMenus();
-    
+
     // Prevent the default action of displaying a text field within the menu.
     event.stopPropagation();
   }

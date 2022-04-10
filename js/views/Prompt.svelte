@@ -5,22 +5,10 @@
 	import { joinPaths } from "@nextcloud/paths"; 
 	import { generateFilePath } from "@nextcloud/router";
 	import { translate as t } from "@nextcloud/l10n";
-	import { get } from 'svelte/store'
-	import { onDestroy, onMount } from "svelte";
 	const OC = window.OC;
 
-	import { directoryStore, visibleStore } from "../store";
-
-	$: visible = false;
-	let unsubscribeVisible;
-	onMount(() => {
-		unsubscribeVisible = visibleStore.subscribe(
-			value => { visible = value; }
-		);
-	});
-	onDestroy(() => {
-		unsubscribeVisible();
-	});
+	export let fileList;
+	export let closeHandler;
 
 	$: filename = "";
 
@@ -44,12 +32,7 @@
 		defaultFilename = segments.pop() || segments.pop();
 	}
 
-	function close() {
-		visibleStore.set(false);
-	};
-	
 	function submit() {
-		visibleStore.set(false);
 		axios
 			.post(
 				generateFilePath("transfer", "ajax", "transfer.php"),
@@ -58,8 +41,8 @@
 					 * otherwise use the default.
 					 */
 					path: filename
-						? joinPaths(get(directoryStore), filename)
-						: joinPaths(get(directoryStore), defaultFilename),
+						? joinPaths(fileList.getCurrentDirectory(), filename)
+						: joinPaths(fileList.getCurrentDirectory(), defaultFilename),
 					url
 				}
 			)
@@ -70,10 +53,11 @@
 				console.error(error);
 				showError(error);
 			});
+		
+		closeHandler();
 	};
 </script>
 
-{#if visible}
 <div class="oc-dialog-dim" />
 <div class="oc-dialog" style="position: fixed;">
 	<form
@@ -102,7 +86,7 @@
 			</label>
 		</div>
 		<div class="oc-dialog-buttonrow twobuttons">
-			<a on:click|preventDefault={close} class="cancel button">
+			<a on:click|preventDefault={closeHandler} class="cancel button">
 				{t("transfer", "Cancel")}
 			</a>
 			<a on:click|preventDefault={submit} class="primary button">
@@ -111,4 +95,3 @@
 		</div>
 	</form>
 </div>
-{/if}
