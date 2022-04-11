@@ -11,21 +11,19 @@ appstore_build_directory=$(CURDIR)/build/artifacts/appstore
 appstore_package_name=$(appstore_build_directory)/$(app_name)
 npm=$(shell which npm 2> /dev/null)
 
-all: build
-
 .PHONY: build
-build:
-	make npm
+build: build-js
 
 # Builds js/bundle.js
-.PHONY: npm
-npm:
+.PHONY: build-js
+build-js:
 	npm install
 	npm run build
 
 # Removes the appstore build
 .PHONY: clean
 clean:
+	rm -f js/bundle.js
 	rm -rf ./build
 
 # Same as clean, but also removes dependencies installed by npm
@@ -35,10 +33,7 @@ distclean: clean
 
 # Builds the appstore package
 .PHONY: dist
-dist:
-	make build
-	make source
-	make appstore
+dist: build appstore
 
 # Builds the source package for the app store
 .PHONY: appstore

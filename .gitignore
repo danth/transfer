@@ -129,5 +129,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+
+# Bundled JavaScript file
+js/bundle.js
+
 # Appstore tarball builds
 build/
