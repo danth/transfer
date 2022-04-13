@@ -1,11 +1,11 @@
 <script>
-	import axios from "@nextcloud/axios";
-	import { showInfo, showError } from '@nextcloud/dialogs';
 	import "@nextcloud/dialogs/styles/toast.scss";
-	import { joinPaths } from "@nextcloud/paths"; 
-	import { generateFilePath } from "@nextcloud/router";
+	import { joinPaths } from "@nextcloud/paths";
 	import { translate as t } from "@nextcloud/l10n";
 	const OC = window.OC;
+
+	import { enqueueTransfer } from "../ajax";
+	import { makeDefaultFilename } from "../url_utilities";
 
 	export let fileList;
 	export let closeHandler;
@@ -20,40 +20,18 @@
 	$: url, setDefaultFilename();
 
 	function setDefaultFilename() {
-		let segments;
-		try {
-			segments = new URL(url).pathname.split('/');
-		} catch (TypeError) {
-			// Do nothing if the URL fails to parse.
-			return;
-		}
-
-		// The || handles the possibility of a trailing slash.
-		defaultFilename = segments.pop() || segments.pop();
+		// Keeps the current value if the URL is invalid.
+		defaultFilename = makeDefaultFilename(url) || defaultFilename;
 	}
 
 	function submit() {
-		axios
-			.post(
-				generateFilePath("transfer", "ajax", "transfer.php"),
-				{
-					/* If the user chose their own filename, use that,
-					 * otherwise use the default.
-					 */
-					path: filename
-						? joinPaths(fileList.getCurrentDirectory(), filename)
-						: joinPaths(fileList.getCurrentDirectory(), defaultFilename),
-					url
-				}
-			)
-			.then((response) => {
-				showInfo(t("transfer", "Transfer queued to run in the background."));
-			})
-			.catch((error) => {
-				console.error(error);
-				showError(error);
-			});
-		
+		// If the user chose their own filename, use that, otherwise use the default.
+		const path = filename
+			? joinPaths(fileList.getCurrentDirectory(), filename)
+			: joinPaths(fileList.getCurrentDirectory(), defaultFilename);
+
+		enqueueTransfer(path, url);
+
 		closeHandler();
 	};
 </script>
