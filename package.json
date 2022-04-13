@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "Add a file to Nextcloud from a web link.",
   "scripts": {
-    "build": "rollup -c"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,14 +15,16 @@
     "url": "https://github.com/danth/nextcloud-transfer/issues"
   },
   "homepage": "https://github.com/danth/nextcloud-transfer#readme",
+  "browserslist": "> 0.25%, not dead",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.3",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "rollup": "^2.70.1",
-    "rollup-plugin-polyfill-node": "^0.9.0",
-    "rollup-plugin-styles": "^4.0.0",
-    "rollup-plugin-svelte": "^7.1.0",
-    "sass": "^1.50.0"
+    "@babel/core": "^7.17.9",
+    "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "svelte-loader": "^3.1.2",
+    "webpack-cli": "^4.9.2"
   },
   "dependencies": {
     "@nextcloud/axios": "^1.9.0",
