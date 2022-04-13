@@ -3,7 +3,11 @@
   "version": "0.3.0",
   "description": "Add a file to Nextcloud from a web link.",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "test": "mocha --require @babel/register --recursive test/js"
+  },
+  "directories": {
+    "test": "./test/js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +22,11 @@
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "@babel/core": "^7.17.9",
+    "@babel/register": "^7.17.7",
     "babel-loader": "^8.2.4",
+    "chai": "^4.3.6",
     "css-loader": "^6.7.1",
+    "mocha": "^9.2.2",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

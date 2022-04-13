@@ -8,5 +8,5 @@ export function makeDefaultFilename(url) {
 		}
 
 		// The || handles the possibility of a trailing slash.
-		return segments.pop() || segments.pop();
+		return segments.pop() || segments.pop() || null;
 }
