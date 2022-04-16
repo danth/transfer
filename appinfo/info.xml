@@ -24,4 +24,19 @@
     <dependencies>
         <nextcloud min-version="23" max-version="23"/>
     </dependencies>
+    <activity>
+        <settings>
+            <setting>OCA\Transfer\Activity\Settings\TransferStartedSetting</setting>
+            <setting>OCA\Transfer\Activity\Settings\TransferFailedSetting</setting>
+            <setting>OCA\Transfer\Activity\Settings\TransferSucceededSetting</setting>
+        </settings>
+        <filters>
+            <filter>OCA\Transfer\Activity\Filter</filter>
+        </filters>
+        <providers>
+            <provider>OCA\Transfer\Activity\Providers\TransferStartedProvider</provider>
+            <provider>OCA\Transfer\Activity\Providers\TransferFailedProvider</provider>
+            <provider>OCA\Transfer\Activity\Providers\TransferSucceededProvider</provider>
+        </providers>
+    </activity>
 </info>
