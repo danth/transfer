@@ -1,6 +1,7 @@
 
 <script>
 	import { translate as t } from "@nextcloud/l10n";
+  import { generateFilePath } from "@nextcloud/router";
 	const OC = window.OC;
 
   export let openHandler;
@@ -23,7 +24,7 @@
       <image
         x="12" y="12" width="20" height="20"
         preserveAspectRatio="xMinYMin meet"
-        xlink:href="/apps/transfer/img/app-dark.svg" />
+        xlink:href={generateFilePath("transfer", "img", "app-dark.svg")} />
     </svg>
     <span class="displayname">{t("transfer", "Transfer file from URL")}</span>
   </a>
