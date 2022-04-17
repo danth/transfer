@@ -28,7 +28,7 @@ class Filter implements IFilter {
 	}
 
 	public function getIcon() {
-		return $this->url->imagePath("transfer", "app.svg");
+		return $this->url->imagePath("transfer", "app-dark.svg");
 	}
 
 	public function filterTypes(array $types) {

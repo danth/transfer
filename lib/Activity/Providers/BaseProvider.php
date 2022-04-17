@@ -19,7 +19,7 @@ abstract class BaseProvider implements IProvider {
         // TODO: Respect activityManager->getRequirePNG()
         $event->setIcon(
             $this->urlGenerator->getAbsoluteUrl(
-                $this->urlGenerator->imagePath("transfer", "app.svg")
+                $this->urlGenerator->imagePath("transfer", "app-dark.svg")
             )
         );
     }
