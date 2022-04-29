@@ -28,10 +28,8 @@
 	}
 
 	function submit() {
-		// If the user chose their own filename, use that, otherwise use the default.
-		const path = filename
-			? joinPaths(fileList.getCurrentDirectory(), filename)
-			: joinPaths(fileList.getCurrentDirectory(), defaultFilename);
+		const fullFilename = `${filename || defaultFilename}.${extension || defaultExtension}`;
+		const path = joinPaths(fileList.getCurrentDirectory(), fullFilename);
 
 		enqueueTransfer(path, url);
 
