@@ -22,7 +22,7 @@
     <website>https://github.com/danth/nextcloud-transfer#readme</website>
     <bugs>https://github.com/danth/nextcloud-transfer/issues</bugs>
     <dependencies>
-        <nextcloud min-version="23" max-version="23"/>
+        <nextcloud min-version="23" max-version="24"/>
     </dependencies>
     <activity>
         <settings>
