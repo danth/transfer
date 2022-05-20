@@ -27,6 +27,13 @@ need to configure your server so that `cron.php` is triggered more often.
 
 ## Development information
 
+### Translations
+
+You can help to translate the app by joining the
+[Nextcloud team on Transifex](https://www.transifex.com/nextcloud/nextcloud/).
+
+![Translation statistics](https://www.transifex.com/projects/p/nextcloud/resource/nextcloud-transfer/chart/image_png)
+
 ### Building the app
 
 The app can be built using the provided Makefile by running `make`.
