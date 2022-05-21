@@ -14,6 +14,15 @@ export function enqueueTransfer(path, url) {
 		})
 		.catch((error) => {
 			console.error(error);
-			showError(error);
+
+			if (error.response && error.response.status) {
+				showError(t(
+					"transfer",
+					"Could not queue the transfer. The server responded with status code {statusCode}.",
+					{ statusCode: error.response.status }
+				));
+			} else {
+				showError(t("transfer", "Could not queue the transfer."));
+			}
 		});
 }
