@@ -47,4 +47,5 @@ appstore:
 		./img \
 		./js/bundle \
 		./lib \
+		./l10n \
 		./README.md
