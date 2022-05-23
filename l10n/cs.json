@@ -1,5 +1,7 @@
 { "translations": {
     "Transfer queued to run in the background." : "Přenos zařazen do fronty pro spuštění na pozadí.",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "Přenos se nedaří zařadit do fronty. Server odpověděl se stavovým kódem {statusCode}.",
+    "Could not queue the transfer." : "Přenos se nedaří zařadit do fronty.",
     "File transfers" : "Přenosy souborů",
     "Transfer of {url} failed" : "Přenos {url} se nezdařil",
     "Transfer of {url} was blocked" : "Přenos {url} byl zablokován",
