@@ -2,6 +2,8 @@ OC.L10N.register(
     "transfer",
     {
     "Transfer queued to run in the background." : "Pobieranie w kolejce do działania w tle.",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "Nie udało się dodać pobierania w kolejce. Serwer odpowiedział kodem statusu {statusCode}.",
+    "Could not queue the transfer." : "Nie udało się dodać pobierania w kolejce.",
     "File transfers" : "Pobieranie plików",
     "Transfer of {url} failed" : "Pobieranie adresu {url} nie powiodło się",
     "Transfer of {url} was blocked" : "Pobieranie adresu {url} zostało zablokowane",

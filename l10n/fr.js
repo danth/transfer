@@ -15,4 +15,4 @@ OC.L10N.register(
     "Add a file to Nextcloud from a web link." : "Ajouter un fichier à Nextcloud à partir d'un lien web.",
     "This app allows you to have a file from the Internet\n            transferred directly into your Nextcloud, without first having\n            to download it to your personal device in order to\n            upload it. You simply enter the download link and the\n            transfer happens on the server side, making it possible\n            to leave downloads running in the background even when\n            your personal computer is switched off." : "Cette application vous permet de récupérer un fichier depuis Internet\ntransféré directement dans votre Nextcloud, sans devoir d'abord\nle télécharger sur votre appareil personnel pour\nl'envoyer ensuite. Vous entrez simplement le lien de téléchargement et le\ntransfert s'effectue côté du serveur, ce qui permet\ndes téléchargements en arrière-plan même lorsque\nvotre ordinateur personnel est éteint."
 },
-"nplurals=2; plural=(n > 1);");
+"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

@@ -2,6 +2,8 @@ OC.L10N.register(
     "transfer",
     {
     "Transfer queued to run in the background." : "轉移已排隊在後台運行。",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "無法將轉移排入處理列。伺服器發出的狀態碼是 {statusCode}。",
+    "Could not queue the transfer." : "無法將轉移排入處理列。",
     "File transfers" : "檔案轉移",
     "Transfer of {url} failed" : "{url} 轉移失敗",
     "Transfer of {url} was blocked" : "{url} 的轉移被阻止",
