@@ -1,7 +1,9 @@
 OC.L10N.register(
     "transfer",
     {
-    "Transfer queued to run in the background." : "Transfert mis en file d’attente pour fonctionner en arrière-plan.",
+    "Transfer queued to run in the background." : "Transfert mis en file d’attente pour s'éxécuter en arrière-plan.",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "Le transfert n'a pas pu être placé en file d'attente. Le serveur a répondu avec le code d'erreur {statusCode}.",
+    "Could not queue the transfer." : "Le transfert n'a pas pu être placé en file d'attente.",
     "File transfers" : "Transferts de fichiers",
     "Transfer of {url} failed" : "Le transfert de {url} a échoué",
     "Transfer of {url} was blocked" : "Le transfert de {url} a été bloqué",
