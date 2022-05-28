@@ -2,6 +2,8 @@ OC.L10N.register(
     "transfer",
     {
     "Transfer queued to run in the background." : "Átvitel sorba állítva a háttérbeli futtatáshoz.",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "Nem sikerült az átvitel sorba állítása. A kiszolgáló a következő állapotkóddal válaszolt: {statusCode}.",
+    "Could not queue the transfer." : "Nem sikerült az átvitel sorba állítása.",
     "File transfers" : "Fájltátvitelek",
     "Transfer of {url} failed" : "A(z) {url} átvitele sikertelen",
     "Transfer of {url} was blocked" : "A(z) {url} átvitele blokkolva lett",
