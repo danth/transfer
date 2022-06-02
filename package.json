@@ -1,6 +1,6 @@
 {
   "name": "transfer",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Add a file to Nextcloud from a web link.",
   "scripts": {
     "build": "webpack",
