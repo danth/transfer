@@ -38,11 +38,11 @@ class TransferService {
 
 		try {
 			$response = $client->get($url, ["sink" => $realPath, "timeout" => 0]);
-		} catch (BadResponseException) {
+		} catch (BadResponseException $exception) {
 			// The HTTP request had an unsuccessful response code.
 			$this->generateFailedEvent($userId, $path, $url);
 			return false;
-		} catch (LocalServerException) {
+		} catch (LocalServerException $exception) {
 			// The user tried to access `localhost` or similar.
 			$this->generateBlockedEvent($userId, $path, $url);
 			return false;
