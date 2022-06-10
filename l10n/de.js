@@ -2,6 +2,8 @@ OC.L10N.register(
     "transfer",
     {
     "Transfer queued to run in the background." : "Die Übertragung wurde dem Warteschlagendienst übergeben. ",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "Die Übertragung konnte nicht in die Warteschlange gestellt werden. Der Server antwortete mit dem Statuscode {statusCode}.",
+    "Could not queue the transfer." : "Die Übertragung konnte nicht in die Warteschlange gestellt werden.",
     "File transfers" : "Dateiübertragungen",
     "Transfer of {url} failed" : "Der Download von {url} ist fehlgeschlagen",
     "Transfer of {url} was blocked" : "Der Download von {url} wurde verweigert",
