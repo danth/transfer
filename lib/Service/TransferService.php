@@ -26,7 +26,7 @@ class TransferService {
 	/**
 	 * @return Whether the transfer succeeded.
 	 */
-	public function transfer(string $userId, string $path, string $url) {
+	public function transfer(string $userId, string $path, string $url, string $hashAlgo, string $hash) {
 		\OC_Util::tearDownFS();
 		\OC_Util::setupFS($userId);
 
@@ -48,10 +48,17 @@ class TransferService {
 			return false;
 		}
 
-		Filesystem::touch($path);
+		if ($hash == "" || hash_file($hashAlgo, $realPath) == $hash) {
+			Filesystem::touch($path);
 
-		$this->generateSucceededEvent($userId, $path, $url);
-		return true;
+			$this->generateSucceededEvent($userId, $path, $url);
+			return true;
+		} else {
+			unlink($realPath);
+
+			$this->generateHashFailedEvent($userId, $path, $url);
+			return false;
+		}
 	}
 
 	protected function generateStartedEvent(string $userId, string $path, string $url) {
@@ -69,6 +76,15 @@ class TransferService {
 		$event->setType(TransferFailedProvider::TYPE_TRANSFER_FAILED);
 		$event->setAffectedUser($userId);
 		$event->setSubject(TransferFailedProvider::SUBJECT_TRANSFER_FAILED, ["url" => $url]);
+		$this->activityManager->publish($event);
+	}
+
+	protected function generateHashFailedEvent(string $userId, string $path, string $url) {
+		$event = $this->activityManager->generateEvent();
+		$event->setApp("transfer");
+		$event->setType(TransferFailedProvider::TYPE_TRANSFER_FAILED);
+		$event->setAffectedUser($userId);
+		$event->setSubject(TransferFailedProvider::SUBJECT_TRANSFER_HASH_FAILED, ["url" => $url]);
 		$this->activityManager->publish($event);
 	}
 

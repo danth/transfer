@@ -6,6 +6,7 @@ use OCP\Activity\IEvent;
 class TransferFailedProvider extends BaseProvider {
     public const TYPE_TRANSFER_FAILED = "transfer_failed";
     public const SUBJECT_TRANSFER_FAILED = "transfer_failed";
+    public const SUBJECT_TRANSFER_HASH_FAILED = "transfer_hash_failed";
     public const SUBJECT_TRANSFER_BLOCKED = "transfer_blocked";
 
     public function parse($language, IEvent $event, ?IEvent $previousEvent = null) {
@@ -18,6 +19,8 @@ class TransferFailedProvider extends BaseProvider {
         $subject = "";
         if ($event->getSubject() == self::SUBJECT_TRANSFER_FAILED) {
             $subject = $l->t("Transfer of {url} failed");
+        } elseif ($event->getSubject() == self::SUBJECT_TRANSFER_HASH_FAILED) {
+            $subject = $l->t("{url} did not match the checksum provided");
         } else {
             $subject = $l->t("Transfer of {url} was blocked");
         }

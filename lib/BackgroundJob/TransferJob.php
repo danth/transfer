@@ -18,7 +18,9 @@ class TransferJob extends QueuedJob {
 		$this->service->transfer(
 			$arguments["userId"],
 			$arguments["path"],
-			$arguments["url"]
+			$arguments["url"],
+			$arguments["hashAlgo"],
+			$arguments["hash"]
 		);
 	}
 }

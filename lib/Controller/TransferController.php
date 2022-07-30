@@ -37,11 +37,13 @@ class TransferController extends Controller {
 	 * @NoAdminRequired
 	 * @NoCSRFRequired
 	 */
-	public function transfer(string $path, string $url) {
+	public function transfer(string $path, string $url, string $hashAlgo, string $hash) {
 		$this->jobList->add(TransferJob::class, [
 			"userId" => $this->userId,
 			"path" => $path,
 			"url" => $url,
+			"hashAlgo" => $hashAlgo,
+			"hash" => $hash,
 		]);
 
 		return new DataResponse(true, Http::STATUS_OK);

@@ -3,11 +3,11 @@ import { showInfo, showError } from '@nextcloud/dialogs';
 import { translate as t } from "@nextcloud/l10n";
 import { generateFilePath } from "@nextcloud/router";
 
-export function enqueueTransfer(path, url) {
+export function enqueueTransfer(path, url, hashAlgo, hash) {
 	axios
 		.post(
 			generateFilePath("transfer", "ajax", "transfer.php"),
-			{ path, url }
+			{ path, url, hashAlgo, hash }
 		)
 		.then((response) => {
 			showInfo(t("transfer", "Transfer queued to run in the background."));
