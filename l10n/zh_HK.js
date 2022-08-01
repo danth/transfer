@@ -6,6 +6,7 @@ OC.L10N.register(
     "Could not queue the transfer." : "無法將轉移排入處理列。",
     "File transfers" : "檔案轉移",
     "Transfer of {url} failed" : "{url} 轉移失敗",
+    "{url} did not match the checksum provided" : "{url} 與提供的校驗和不匹配",
     "Transfer of {url} was blocked" : "{url} 的轉移被阻止",
     "Transfer of {url} was started" : "{url} 的轉移已開始",
     "{url} was transferred to {file}" : "{url} 已轉移到 {file}",
