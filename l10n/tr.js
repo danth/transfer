@@ -6,6 +6,7 @@ OC.L10N.register(
     "Could not queue the transfer." : "Aktarım sıraya alınamadı.",
     "File transfers" : "Dosya aktarımları",
     "Transfer of {url} failed" : "{url} aktarımı tamamlanamadı",
+    "{url} did not match the checksum provided" : "{url} belirtilen sağlama ile eşleşmiyor",
     "Transfer of {url} was blocked" : "{url} aktarımı engellendi",
     "Transfer of {url} was started" : "{url} aktarımı başlatıldı",
     "{url} was transferred to {file}" : "{url}, {file} dosyasına aktarıldı",

@@ -6,6 +6,7 @@ OC.L10N.register(
     "Could not queue the transfer." : "No s'ha pogut posar la transferència a la cua.",
     "File transfers" : "Transferències de fitxers",
     "Transfer of {url} failed" : "Ha fallat la transferència de {url}",
+    "{url} did not match the checksum provided" : "{url} no coincideix amb la suma de comprovació proporcionada",
     "Transfer of {url} was blocked" : "S’ha bloquejat la transferència de {url}",
     "Transfer of {url} was started" : "Ha començat la transferència de {url}",
     "{url} was transferred to {file}" : "{url} s’ha transferit a {file}",

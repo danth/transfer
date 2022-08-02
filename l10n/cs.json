@@ -4,6 +4,7 @@
     "Could not queue the transfer." : "Přenos se nedaří zařadit do fronty.",
     "File transfers" : "Přenosy souborů",
     "Transfer of {url} failed" : "Přenos {url} se nezdařil",
+    "{url} did not match the checksum provided" : "{url} neodpovídá poskytnutému kontrolnímu součtu",
     "Transfer of {url} was blocked" : "Přenos {url} byl zablokován",
     "Transfer of {url} was started" : "Přenos {url} byl zahájen",
     "{url} was transferred to {file}" : "{url} bylo přeneseno do {file}",
