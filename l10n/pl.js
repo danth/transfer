@@ -6,6 +6,7 @@ OC.L10N.register(
     "Could not queue the transfer." : "Nie udało się dodać pobierania w kolejce.",
     "File transfers" : "Pobieranie plików",
     "Transfer of {url} failed" : "Pobieranie adresu {url} nie powiodło się",
+    "{url} did not match the checksum provided" : "{url} nie pasuje do podanej sumy kontrolnej",
     "Transfer of {url} was blocked" : "Pobieranie adresu {url} zostało zablokowane",
     "Transfer of {url} was started" : "Rozpoczęto pobieranie {url}",
     "{url} was transferred to {file}" : "{url} został pobrany do {file}",

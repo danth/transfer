@@ -6,6 +6,7 @@ OC.L10N.register(
     "Could not queue the transfer." : "Nem sikerült az átvitel sorba állítása.",
     "File transfers" : "Fájltátvitelek",
     "Transfer of {url} failed" : "A(z) {url} átvitele sikertelen",
+    "{url} did not match the checksum provided" : "A(z) {url} ellenőrzőösszege nem egyezik meg a megadottal",
     "Transfer of {url} was blocked" : "A(z) {url} átvitele blokkolva lett",
     "Transfer of {url} was started" : "A(z) {url} átvitele elindult",
     "{url} was transferred to {file}" : "A(z) {url} átvíve ide: {file}",
