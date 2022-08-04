@@ -6,6 +6,7 @@ OC.L10N.register(
     "Could not queue the transfer." : "Ezin izan da transferentzia ilaran jarri.",
     "File transfers" : "Fitxategi-transferentziak",
     "Transfer of {url} failed" : "Ezin izan da {url} transferitu",
+    "{url} did not match the checksum provided" : "{url} ez dator bat emandako kontroleko baturarekin",
     "Transfer of {url} was blocked" : "{url}-ren transferentzia blokeatu da",
     "Transfer of {url} was started" : "{url}-ren transferentzia hasi da",
     "{url} was transferred to {file}" : "{url}-a {fitxategi}-ra transferitu da",
