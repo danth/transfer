@@ -4,6 +4,7 @@
     "Could not queue the transfer." : "Não foi possível colocar a transferência em espera.",
     "File transfers" : "Transferência de ficheiros",
     "Transfer of {url} failed" : "A transferência de {url} foi mal sucedida",
+    "{url} did not match the checksum provided" : "{url} não corresponde ao checksum providenciado",
     "Transfer of {url} was blocked" : "A transferência de {url} foi bloqueada",
     "Transfer of {url} was started" : "A transferência de {url} foi iniciada",
     "{url} was transferred to {file}" : "{url} foi transferido para {file}",

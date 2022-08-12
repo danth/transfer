@@ -4,6 +4,7 @@
     "Could not queue the transfer." : "Прехвърлянето не можа да бъде поставено на опашка.",
     "File transfers" : "Прехвърляне на файлове",
     "Transfer of {url} failed" : "Прехвърлянето на {url} не беше успешно",
+    "{url} did not match the checksum provided" : "{url} не съответства на предоставената контролна сума",
     "Transfer of {url} was blocked" : "Прехвърлянето на {url} беше блокирано",
     "Transfer of {url} was started" : "Прехвърлянето на {url} започна",
     "{url} was transferred to {file}" : "{url} бе прехвърлен на {file}",
