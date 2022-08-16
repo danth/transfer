@@ -6,6 +6,7 @@ OC.L10N.register(
     "Could not queue the transfer." : "Le transfert n'a pas pu être placé en file d'attente.",
     "File transfers" : "Transferts de fichiers",
     "Transfer of {url} failed" : "Le transfert de {url} a échoué",
+    "{url} did not match the checksum provided" : "{url} ne correspond pas à la somme de contrôle fournie",
     "Transfer of {url} was blocked" : "Le transfert de {url} a été bloqué",
     "Transfer of {url} was started" : "Le transfert de {url} a commencé",
     "{url} was transferred to {file}" : "{url} a été transféré dans {file}",
