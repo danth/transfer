@@ -1,6 +1,6 @@
 OC.L10N.register(
     "transfer",
     {
-    "Files" : "Fayllar"
+    "Files" : "Files"
 },
 "nplurals=1; plural=0;");
