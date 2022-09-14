@@ -4,6 +4,7 @@
     "Could not queue the transfer." : "Die Übertragung konnte nicht in die Warteschlange gestellt werden.",
     "File transfers" : "Dateiübertragungen",
     "Transfer of {url} failed" : "Der Download von {url} ist fehlgeschlagen",
+    "{url} did not match the checksum provided" : "{url} passt nicht zu der angegebenen Prüfsumme",
     "Transfer of {url} was blocked" : "Der Download von {url} wurde verweigert",
     "Transfer of {url} was started" : "Der Download von {url} wurde gestartet",
     "{url} was transferred to {file}" : "{url} wurde nach {file} heruntergeladen",
