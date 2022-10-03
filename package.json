@@ -35,7 +35,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@nextcloud/axios": "^2.0.0",
+    "@nextcloud/axios": "^2.1.0",
     "@nextcloud/dialogs": "^3.2.0",
     "@nextcloud/l10n": "^1.6.0",
     "@nextcloud/paths": "^2.1.0",
