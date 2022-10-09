@@ -2,8 +2,11 @@ OC.L10N.register(
     "transfer",
     {
     "Transfer queued to run in the background." : "Prenos pridaný na spracovanie na pozadí.",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "Prenos sa nepodarilo zaradiť do fronty. Server odpovedal stavovým kódom {statusCode}.",
+    "Could not queue the transfer." : "Prenos sa nepodarilo zaradiť do fronty.",
     "File transfers" : "Prenosy súborov",
     "Transfer of {url} failed" : "Prenos {url} skončil s chybou",
+    "{url} did not match the checksum provided" : "{url} nesúhlasí so zadaným kontrolným súčtom",
     "Transfer of {url} was blocked" : "Prenos {url} bol zablokovaný",
     "Transfer of {url} was started" : "Prenos {url} bol spustený",
     "{url} was transferred to {file}" : "{url} bolo prenesené do {file}",
