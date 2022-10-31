@@ -4,6 +4,7 @@
     "Could not queue the transfer." : "転送をキューに追加できませんでした。",
     "File transfers" : "ファイル転送",
     "Transfer of {url} failed" : "{url}の転送に失敗",
+    "{url} did not match the checksum provided" : "{url} は提供されたチェックサムと一致しませんでした",
     "Transfer of {url} was blocked" : "{url}の転送がブロックされました",
     "Transfer of {url} was started" : "{url}の転送が開始されました",
     "{url} was transferred to {file}" : "{url}は{file}へ転送されました",
