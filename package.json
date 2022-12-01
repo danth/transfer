@@ -21,7 +21,7 @@
   "homepage": "https://github.com/danth/nextcloud-transfer#readme",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
-    "@babel/core": "^7.20.2",
+    "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
     "chai": "^4.3.7",
