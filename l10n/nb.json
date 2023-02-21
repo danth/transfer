@@ -4,6 +4,7 @@
     "Could not queue the transfer." : "Kunne ikke sette overføringen i kø.",
     "File transfers" : "Filoverføringer",
     "Transfer of {url} failed" : "Overføring av {url} feilet",
+    "{url} did not match the checksum provided" : "{url} samsvarte ikke med kontrollsummen som ble oppgitt",
     "Transfer of {url} was blocked" : "Overføring av {url} ble blokkert",
     "Transfer of {url} was started" : "Overføring av {url} ble startet",
     "{url} was transferred to {file}" : "{url} ble overført til {file}",
