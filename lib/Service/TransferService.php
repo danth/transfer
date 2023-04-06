@@ -32,12 +32,12 @@ class TransferService {
 
 		$this->generateStartedEvent($userId, $path, $url);
 
-		$realPath = Filesystem::getView()->getLocalFile($path);
+		$tmpPath = tempnam(sys_get_temp_dir(), "nextcloud-transfer-");
 
 		$client = $this->clientService->newClient();
 
 		try {
-			$response = $client->get($url, ["sink" => $realPath, "timeout" => 0]);
+			$response = $client->get($url, ["sink" => $tmpPath, "timeout" => 0]);
 		} catch (BadResponseException $exception) {
 			// The HTTP request had an unsuccessful response code.
 			$this->generateFailedEvent($userId, $path, $url);
@@ -48,13 +48,14 @@ class TransferService {
 			return false;
 		}
 
-		if ($hash == "" || hash_file($hashAlgo, $realPath) == $hash) {
-			Filesystem::touch($path);
+		if ($hash == "" || hash_file($hashAlgo, $tmpPath) == $hash) {
+			Filesystem::file_put_contents($path, fopen($tmpPath, 'r'));
+			unlink($tmpPath);
 
 			$this->generateSucceededEvent($userId, $path, $url);
 			return true;
 		} else {
-			unlink($realPath);
+			unlink($tmpPath);
 
 			$this->generateHashFailedEvent($userId, $path, $url);
 			return false;
