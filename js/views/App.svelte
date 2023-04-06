@@ -63,11 +63,11 @@
   				}
   			}
   		}).observe(
-  			/* #controls is the top bar of the files app, containing the
+  			/* .files-controls is the top bar of the files app, containing the
   			 * current folder path and various buttons. We want to react
   			 * when the "new file" menu is opened within it.
   			 */
-  			document.getElementById("controls"),
+  			document.querySelector(".files-controls"),
   			{ childList: true, subtree: true }
   		);
   	},
