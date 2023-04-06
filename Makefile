@@ -23,7 +23,7 @@ build-js:
 # Removes the appstore build
 .PHONY: clean
 clean:
-	rm -rf build js/bundle
+	rm -rf build src/bundle js
 
 # Same as clean, but also removes dependencies installed by npm
 .PHONY: distclean
@@ -45,7 +45,7 @@ appstore:
 		./appinfo \
 		./COPYING \
 		./img \
-		./js/bundle \
+		./js \
 		./lib \
 		./l10n \
 		./README.md

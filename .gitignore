@@ -130,7 +130,7 @@ dist
 .pnp.*
 
 # Webpack output
-js/bundle
+js
 
 # Appstore tarball builds
 build
