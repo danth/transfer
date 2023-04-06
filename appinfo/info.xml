@@ -13,7 +13,7 @@
             to leave downloads running in the background even when
             your personal computer is switched off.]]>
     </description>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
     <licence>agpl</licence>
     <author mail="danthwaites30@btinternet.com" homepage="https://github.com/danth">Daniel Thwaites</author>
     <namespace>Transfer</namespace>
@@ -22,7 +22,7 @@
     <website>https://github.com/danth/nextcloud-transfer#readme</website>
     <bugs>https://github.com/danth/nextcloud-transfer/issues</bugs>
     <dependencies>
-        <nextcloud min-version="23" max-version="24"/>
+        <nextcloud min-version="25" max-version="26"/>
     </dependencies>
     <activity>
         <settings>
