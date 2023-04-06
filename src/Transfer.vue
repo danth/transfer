@@ -1,5 +1,5 @@
 <template>
-  <NcModal v-if="visible" @close="close" title="Transfer file">
+  <NcModal v-if="visible" @close="close" :title="t('transfer', 'Transfer file')">
     <div class="modal-content">
       <NcTextField
         :value.sync="url"
