@@ -19,8 +19,9 @@
     <namespace>Transfer</namespace>
     <category>files</category>
     <category>tools</category>
-    <website>https://github.com/danth/nextcloud-transfer#readme</website>
-    <bugs>https://github.com/danth/nextcloud-transfer/issues</bugs>
+    <website>https://github.com/danth/transfer#readme</website>
+    <bugs>https://github.com/danth/transfer/issues</bugs>
+    <screenshot>https://raw.githubusercontent.com/danth/transfer/master/img/screenshots/transfer.png</screenshot>
     <dependencies>
         <nextcloud min-version="25" max-version="26"/>
     </dependencies>

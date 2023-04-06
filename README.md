@@ -1,4 +1,6 @@
-# Nextcloud "Transfer" app
+# Nextcloud Transfer app
+
+![Screenshot of the app.](img/screenshots/transfer.png)
 
 This app allows you to have a file from the Internet transferred directly into
 your Nextcloud, without first having to download it to your personal device in
@@ -8,22 +10,20 @@ background even when your personal computer is switched off.
 
 ## Usage instructions
 
-To start a download, select "Transfer file from URL" from the new file menu.
+To start a download, select "Transfer file" from the menu.
 
-![This button can be found at the top of the file list.](img/instructions/menu.png)
+![Menu at the top of the files page.](img/instructions/menu.png)
 
-A prompt will appear for you to paste the download link.
-
-You may also choose a custom name to save the transferred file as.
-If you leave this blank, a name will be generated based on the link.
+A prompt will appear for you to paste the download link. The file name and
+extension are filled in automatically when possible, but can be changed.
 
 ![The prompt appears in the middle of the screen.](img/instructions/prompt.png)
 
-Finally, click "Transfer".
+Once you click "Transfer", the download will be queued to run in the background.
+This should start within five minutes if your server is set up correctly.
 
-The download will happen in a background job, which should start within five minutes
-if your server is set up correctly. If you want transfers to start sooner, you will
-need to configure your server so that `cron.php` is triggered more often.
+If you want to reduce this delay, you will need to configure your server to
+trigger `cron.php` more often.
 
 ## Development information
 
