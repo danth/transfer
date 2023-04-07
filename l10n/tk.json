@@ -1,4 +1,5 @@
 { "translations": {
-    "Files" : "Faýllar"
+    "Files" : "Faýllar",
+    "Cancel" : "ýatyrmak"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

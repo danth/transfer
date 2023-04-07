@@ -1,5 +1,8 @@
 { "translations": {
     "Files" : "Filer",
-    "Transfer" : "Överför"
+    "Transfer" : "Överför",
+    "File name" : "Filnamn",
+    "Extension" : "Tillägg",
+    "Cancel" : "Avbryt"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

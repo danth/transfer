@@ -1,4 +1,5 @@
 { "translations": {
-    "Files" : "فایلونه"
+    "Files" : "فایلونه",
+    "Cancel" : "پرېښودل"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

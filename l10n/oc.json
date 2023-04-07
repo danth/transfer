@@ -1,4 +1,7 @@
 { "translations": {
-    "Files" : "Fichièrs"
+    "Files" : "Fichièrs",
+    "File name" : "Nom de fichièr",
+    "Extension" : "Extension",
+    "Cancel" : "Anullar"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

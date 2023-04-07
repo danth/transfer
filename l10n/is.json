@@ -1,5 +1,6 @@
 { "translations": {
     "Files" : "Skrár",
-    "Transfer" : "Færa"
+    "Transfer" : "Færa",
+    "Extension" : "Skráarending"
 },"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
 }

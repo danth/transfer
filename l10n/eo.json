@@ -1,4 +1,6 @@
 { "translations": {
-    "Files" : "Dosieroj"
+    "Files" : "Dosieroj",
+    "File name" : "Dosiernomo",
+    "Extension" : "Dosiersufikso"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

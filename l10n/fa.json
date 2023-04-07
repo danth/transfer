@@ -1,5 +1,7 @@
 { "translations": {
     "Files" : "فایل ها",
-    "Transfer" : "انتقال"
+    "Transfer" : "انتقال",
+    "Extension" : "گسترش",
+    "Cancel" : "منصرف شدن"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

@@ -1,6 +1,7 @@
 OC.L10N.register(
     "transfer",
     {
-    "Files" : "فایلونه"
+    "Files" : "فایلونه",
+    "Cancel" : "پرېښودل"
 },
 "nplurals=2; plural=(n != 1);");

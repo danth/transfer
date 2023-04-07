@@ -1,5 +1,8 @@
 { "translations": {
     "Files" : "Archìvios",
-    "Transfer" : "Tràmuda"
+    "Transfer" : "Tràmuda",
+    "File name" : "Nùmene de archìviu",
+    "Extension" : "Estensione",
+    "Cancel" : "Annulla"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
