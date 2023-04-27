@@ -1,6 +1,7 @@
 { "translations": {
     "Files" : "Filer",
     "Transfer" : "Overførsel",
-    "Extension" : "Filtype"
+    "Extension" : "Filtype",
+    "Cancel" : "Annullér"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

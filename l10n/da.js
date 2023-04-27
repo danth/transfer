@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files" : "Filer",
     "Transfer" : "Overførsel",
-    "Extension" : "Filtype"
+    "Extension" : "Filtype",
+    "Cancel" : "Annullér"
 },
 "nplurals=2; plural=(n != 1);");
