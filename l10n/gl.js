@@ -5,6 +5,7 @@ OC.L10N.register(
     "Transfer" : "Transferencia",
     "File name" : "Nome de ficheiro",
     "Extension" : "Extensión",
+    "Hash" : "Resumo criptográfico",
     "Cancel" : "Cancelar"
 },
 "nplurals=2; plural=(n != 1);");
