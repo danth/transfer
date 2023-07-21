@@ -1,8 +1,26 @@
 { "translations": {
+    "File transfers" : "Transferencias de archivos",
+    "Transfer of {url} failed" : "La transferencia de {url} falló",
+    "{url} did not match the checksum provided" : "{url} no coincide con el checksum proporcionado",
+    "Transfer of {url} was blocked" : "La transferencia de {url} fue bloqueada",
+    "Transfer of {url} was started" : "La transferencia de {url} fue iniciada",
+    "{url} was transferred to {file}" : "{url} fue transferido a {file}",
+    "A <strong>transfer failed</strong>" : "Una <strong>transferencia falló</strong>",
     "Files" : "Archivos",
+    "A <strong>transfer</strong> was <strong>started</strong>" : "Una <strong>transferencia fue iniciada</strong>",
+    "A <strong>transfer succeeded</strong>" : "Una <strong>transferencia tuvo éxito</strong>",
     "Transfer" : "Transferencia",
+    "Add a file to Nextcloud from a web link." : "Agregar un archivo a Nextcloud desde un enlace web.",
+    "This app allows you to have a file from the Internet\n            transferred directly into your Nextcloud, without first having\n            to download it to your personal device in order to\n            upload it. You simply enter the download link and the\n            transfer happens on the server side, making it possible\n            to leave downloads running in the background even when\n            your personal computer is switched off." : "Esta aplicación te permite tener un archivo de Internet\n      transferido directamente a tu Nextcloud, sin necesidad de\n      descargarlo primero en tu dispositivo personal para\n      luego subirlo. Simplemente ingresas el enlace de descarga y\n      la transferencia ocurre en el servidor, lo que permite que las descargas\n      continúen ejecutándose en segundo plano incluso cuando tu\n      computadora personal está apagada.",
+    "Transfer file" : "Transferir archivo",
+    "Download link" : "Enlace de descarga",
     "File name" : "Nombre de archivo.",
     "Extension" : "Extensión",
-    "Cancel" : "Cancelar"
+    "If you have a checksum, enter it below." : "Si tienes un checksum, ingrésalo a continuación.",
+    "Hash" : "Hash",
+    "Cancel" : "Cancelar",
+    "Transfer queued to run in the background." : "Transferencia en cola para ejecutarse en segundo plano.",
+    "Could not queue the transfer. The server responded with status code {statusCode}." : "No se pudo encolar la transferencia. El servidor respondió con el código de estado {statusCode}.",
+    "Could not queue the transfer." : "No se pudo encolar la transferencia."
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
