@@ -1,6 +1,7 @@
 { "translations": {
     "Files" : "Tệp",
     "Transfer" : "Truyền",
+    "File name" : "Tên tệp tin",
     "Cancel" : "Hủy"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
