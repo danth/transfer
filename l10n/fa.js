@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files" : "فایل ها",
     "Transfer" : "انتقال",
+    "File name" : "نام فایل",
     "Extension" : "گسترش",
     "Cancel" : "منصرف شدن"
 },
