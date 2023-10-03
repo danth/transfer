@@ -20,7 +20,7 @@
   ],
   "devDependencies": {
     "@nextcloud/browserslist-config": "^3.0.0",
-    "@nextcloud/webpack-vue-config": "^5.5.1"
+    "@nextcloud/webpack-vue-config": "^6.0.0"
   },
   "dependencies": {
     "@nextcloud/axios": "^2.4.0",
