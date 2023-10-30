@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files" : "Filer",
     "Transfer" : "Overførsel",
+    "File name" : "Filnavn",
     "Extension" : "Filtype",
     "Cancel" : "Annullér"
 },
