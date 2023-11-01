@@ -1,5 +1,6 @@
 { "translations": {
     "Extension" : "Estensión",
-    "Hash" : "Hash"
+    "Hash" : "Hash",
+    "Cancel" : "Encaboxar"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
