@@ -61,10 +61,7 @@
 </template>
 
 <script>
-  import NcButton from '@nextcloud/vue/dist/Components/NcButton'
-  import NcModal from '@nextcloud/vue/dist/Components/NcModal'
-  import NcSelect from '@nextcloud/vue/dist/Components/NcSelect'
-  import NcTextField from '@nextcloud/vue/dist/Components/NcTextField'
+  import { NcButton, NcModal, NcSelect, NcTextField } from '@nextcloud/vue'
   import pathParse from 'path-parse'
   import { joinPaths } from '@nextcloud/paths'
   import { enqueueTransfer } from './ajax.js'
@@ -72,11 +69,10 @@
   export default {
     components: { NcButton, NcModal, NcSelect, NcTextField },
 
-    props: ['currentDirectory'],
-
     data() {
       return {
         visible: false,
+        currentDirectory: null,
         url: '',
         chosenName: '',
         chosenExtension: '',
@@ -122,8 +118,9 @@
     },
 
     methods: {
-      open() {
+      open(context) {
         this.visible = true
+        this.currentDirectory = context.dirname
       },
 
       close() {

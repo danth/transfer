@@ -7,6 +7,6 @@ use OCP\Util;
 
 class LoadAdditionalScriptsListener implements IEventListener {
 	public function handle(Event $event): void {
-		Util::addScript("transfer", "transfer-main");
+		Util::addInitScript("transfer", "transfer-main");
 	}
 }
