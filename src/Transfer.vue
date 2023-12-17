@@ -1,14 +1,16 @@
 <template>
-  <NcModal v-if="visible" @close="close" :title="t('transfer', 'Transfer file')">
+  <NcModal v-if="visible" @close="close">
+    <h2>{{ t('transfer', 'Upload by link') }}</h2>
+
     <div class="modal-content">
       <NcTextField
         :value.sync="url"
-        :label="t('transfer', 'Download link')"
+        :label="t('transfer', 'Link')"
         :label-visible="true"
         placeholder="https://example.com/file.txt">
       </NcTextField>
 
-			<div class="row">
+      <div class="row">
         <NcTextField
           :value.sync="chosenName"
           :label="t('transfer', 'File name')"
@@ -17,7 +19,7 @@
         </NcTextField>
         .
         <NcTextField
-          style="width: 8em"
+          class="short"
           :value.sync="chosenExtension"
           :label="t('transfer', 'Extension')"
           :label-visible="true"
@@ -25,35 +27,34 @@
         </NcTextField>
       </div>
 
-      <p>{{ t('transfer', 'If you have a checksum, enter it below.') }}</p>
+      <NcNoteCard type="info">
+        <p>{{ t('transfer', 'Some websites provide a checksum in addition to the file. This is used after the transfer to verify that the file is not corrupted.') }}</p>
+      </NcNoteCard>
 
-      <NcSelect
-        v-model="hashAlgo"
-        inputId="hashAlgo"
-        :options="['md5', 'sha1', 'sha256', 'sha512']">
-      </NcSelect>
+      <div class="row">
+        <NcSelect
+          class="short"
+          v-model="hashAlgo"
+          inputId="hashAlgo"
+          :options="['md5', 'sha1', 'sha256', 'sha512']">
+        </NcSelect>
 
-      <NcTextField
-        v-if="hashAlgo"
-        :value.sync="hash"
-        :label="t('transfer', 'Hash')"
-        placeholder="64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c"
-				style="flex-grow: 1;">
-      </NcTextField>
+        <NcTextField
+          :value.sync="hash"
+          :label="t('transfer', 'Checksum')">
+        </NcTextField>
+      </div>
 
-  		<div class="oc-dialog-buttonrow twobuttons">
-        <NcButton
-          type="secondary"
-          @click="close">
-          {{ t('transfer', 'Cancel') }}
-        </NcButton>
-
+      <div class="buttons">
         <NcButton
           type="primary"
           nativeType="submit"
           @click="submit"
           :disabled="!isValid">
-          {{ t('transfer', 'Transfer') }}
+          <template #icon>
+            <NcIconSvgWrapper :svg="TransferSvg" />
+          </template>
+          {{ t('transfer', 'Upload') }}
         </NcButton>
       </div>
     </div>
@@ -61,16 +62,18 @@
 </template>
 
 <script>
-  import { NcButton, NcModal, NcSelect, NcTextField } from '@nextcloud/vue'
+  import { NcButton, NcIconSvgWrapper, NcModal, NcNoteCard, NcSelect, NcTextField } from '@nextcloud/vue'
+  import TransferSvg from '@mdi/svg/svg/cloud-upload.svg'
   import pathParse from 'path-parse'
   import { joinPaths } from '@nextcloud/paths'
   import { enqueueTransfer } from './ajax.js'
 
   export default {
-    components: { NcButton, NcModal, NcSelect, NcTextField },
+    components: { NcButton, NcIconSvgWrapper, NcModal, NcNoteCard, NcSelect, NcTextField },
 
     data() {
       return {
+        TransferSvg,
         visible: false,
         currentDirectory: null,
         url: '',
@@ -138,21 +141,32 @@
 </script>
 
 <style scoped>
-.modal-content {
-	margin: 50px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+h2, .modal-content {
+  margin: calc(var(--default-grid-baseline) * 4);
 }
 
-.modal-content > p {
-	text-align: center;
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--default-grid-baseline) * 4);
 }
 
 .row {
   display: flex;
-  gap: 10px;
-  align-items: last baseline;
+  align-items: baseline;
+  gap: calc(var(--default-grid-baseline) * 4);
+}
+
+.short {
+  width: 12em !important;
+}
+
+.notecard {
+  margin: 0 !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
 }
 </style>

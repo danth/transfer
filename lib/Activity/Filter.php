@@ -20,7 +20,7 @@ class Filter implements IFilter {
 	}
 
 	public function getName() {
-		return $this->l->t("File transfers");
+		return $this->l->t("Upload by link");
 	}
 
 	public function getPriority() {

@@ -18,7 +18,7 @@ class TransferFailedSetting extends ActivitySettings {
     }
 
     public function getName() {
-        return $this->l->t("A <strong>transfer failed</strong>");
+        return $this->l->t("An upload by link was unsuccessful");
     }
 
     public function getGroupIdentifier() {

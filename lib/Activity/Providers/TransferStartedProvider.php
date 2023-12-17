@@ -13,20 +13,13 @@ class TransferStartedProvider extends BaseProvider {
         }
 
         $l = $this->languageFactory->get("transfer", $language);
-
-        $subject = $l->t("Transfer of {url} was started");
+        $subject = $l->t("Transfer of {url} started");
 
         $subjectParameters = $event->getSubjectParameters();
-        $parameters = [];
-
-        $parameters["url"] = [
-            "type" => "highlight",
-            "id" => $subjectParameters["url"],
-            "name" => $subjectParameters["url"]
-        ];
+        $subject = str_replace("{url}", $subjectParameters["url"], $subject);
+        $event->setRichSubject($subject, []);
 
         $this->setIcon($event);
-        $this->setSubjects($event, $subject, $parameters);
         return $event;
     }
 }

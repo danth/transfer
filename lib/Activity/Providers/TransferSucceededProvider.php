@@ -14,30 +14,33 @@ class TransferSucceededProvider extends BaseProvider {
 
         $l = $this->languageFactory->get("transfer", $language);
 
-        $subject = $l->t("{url} was transferred to {file}");
+        if ($this->activityManager->isFormattingFilteredObject()) {
+            $subject = $l->t("Saved from {url}");
+        } else {
+            $subject = $l->t("{url} was saved to {file}");
+        }
 
         $subjectParameters = $event->getSubjectParameters();
+        $subject = str_replace("{url}", $subjectParameters["url"], $subject);
+
         $parameters = [];
 
-        $parameters["file"] = [
-            "type" => "file",
-            "id" => $event->getObjectId(),
-            "name" => basename($event->getObjectName()),
-            "path" => trim($event->getObjectName(), "/"),
-            "link" => $this->urlGenerator->linkToRouteAbsolute(
-                "files.viewcontroller.showFile",
-                ["fileid" => $event->getObjectId()]
-            )
-        ];
+        if (!$this->activityManager->isFormattingFilteredObject()) {
+            $parameters["file"] = [
+                "type" => "file",
+                "id" => $event->getObjectId(),
+                "name" => basename($event->getObjectName()),
+                "path" => trim($event->getObjectName(), "/"),
+                "link" => $this->urlGenerator->linkToRouteAbsolute(
+                    "files.viewcontroller.showFile",
+                    ["fileid" => $event->getObjectId()]
+                )
+            ];
+        }
 
-        $parameters["url"] = [
-            "type" => "highlight",
-            "id" => $subjectParameters["url"],
-            "name" => $subjectParameters["url"]
-        ];
+        $event->setRichSubject($subject, $parameters);
 
         $this->setIcon($event);
-        $this->setSubjects($event, $subject, $parameters);
         return $event;
     }
 }

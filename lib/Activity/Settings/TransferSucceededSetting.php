@@ -18,7 +18,7 @@ class TransferSucceededSetting extends ActivitySettings {
     }
 
     public function getName() {
-        return $this->l->t("A <strong>transfer succeeded</strong>");
+        return $this->l->t("An upload by link was successful");
     }
 
     public function getGroupIdentifier() {

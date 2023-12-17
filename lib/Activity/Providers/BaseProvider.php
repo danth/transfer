@@ -2,6 +2,7 @@
 namespace OCA\Transfer\Activity\Providers;
 
 use OCP\Activity\IEvent;
+use OCP\Activity\IManager;
 use OCP\Activity\IProvider;
 use OCP\IURLGenerator;
 use OCP\L10N\IFactory;
@@ -10,7 +11,12 @@ abstract class BaseProvider implements IProvider {
     protected $languageFactory;
     protected $urlGenerator;
 
-    public function __construct(IFactory $languageFactory, IURLGenerator $urlGenerator) {
+    public function __construct(
+        IManager $activityManager,
+        IFactory $languageFactory,
+        IURLGenerator $urlGenerator
+    ) {
+        $this->activityManager = $activityManager;
         $this->languageFactory = $languageFactory;
         $this->urlGenerator = $urlGenerator;
     }
@@ -22,20 +28,5 @@ abstract class BaseProvider implements IProvider {
                 $this->urlGenerator->imagePath("transfer", "app-dark.svg")
             )
         );
-    }
-
-    protected function setSubjects(IEvent $event, $subject, array $parameters) {
-        $placeholders = $replacements = [];
-        foreach ($parameters as $placeholder => $parameter) {
-            $placeholders[] = '{' . $placeholder . '}';
-            if ($parameter['type'] === 'file') {
-                $replacements[] = $parameter['path'];
-            } else {
-                $replacements[] = $parameter['name'];
-            }
-        }
-
-        $event->setParsedSubject(str_replace($placeholders, $replacements, $subject));
-        $event->setRichSubject($subject, $parameters);
     }
 }

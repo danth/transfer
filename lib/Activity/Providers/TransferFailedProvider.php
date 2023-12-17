@@ -20,22 +20,16 @@ class TransferFailedProvider extends BaseProvider {
         if ($event->getSubject() == self::SUBJECT_TRANSFER_FAILED) {
             $subject = $l->t("Transfer of {url} failed");
         } elseif ($event->getSubject() == self::SUBJECT_TRANSFER_HASH_FAILED) {
-            $subject = $l->t("{url} did not match the checksum provided");
+            $subject = $l->t("Transfer of {url} failed because its checksum did not match");
         } else {
-            $subject = $l->t("Transfer of {url} was blocked");
+            $subject = $l->t("Transfer of {url} was blocked because it uses a restricted address");
         }
 
         $subjectParameters = $event->getSubjectParameters();
-        $parameters = [];
-
-        $parameters["url"] = [
-            "type" => "highlight",
-            "id" => $subjectParameters["url"],
-            "name" => $subjectParameters["url"]
-        ];
+        $subject = str_replace("{url}", $subjectParameters["url"], $subject);
+        $event->setRichSubject($subject, []);
 
         $this->setIcon($event);
-        $this->setSubjects($event, $subject, $parameters);
         return $event;
     }
 }

@@ -17,7 +17,7 @@ const vueMount = new Vue({
 
 addNewFileMenuEntry({
 	id: 'transfer',
-	displayName: t('transfer', 'Upload file by link'),
+	displayName: t('transfer', 'Upload by link'),
 	iconSvgInline: TransferSvg,
 	order: -1,
 
