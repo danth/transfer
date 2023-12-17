@@ -132,5 +132,9 @@ dist
 # Webpack output
 js
 
+# Generated app icons
+img/app.svg
+img/app-dark.svg
+
 # Appstore tarball builds
-build
+transfer.tar.gz
