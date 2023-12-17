@@ -5,23 +5,19 @@
     <name>Transfer</name>
     <summary>Add a file to Nextcloud from a web link.</summary>
     <description>
-        <![CDATA[This app allows you to have a file from the Internet
-            transferred directly into your Nextcloud, without first having
-            to download it to your personal device in order to
-            upload it. You simply enter the download link and the
-            transfer happens on the server side, making it possible
-            to leave downloads running in the background even when
-            your personal computer is switched off.]]>
+        <![CDATA["Upload by link" functionality for Nextcloud. Transfer files
+            using the full bandwidth available to your server. Avoid the need to
+            leave your own device online to finish an upload.]]>
     </description>
     <version>0.6.1</version>
     <licence>agpl</licence>
-    <author mail="danthwaites30@btinternet.com" homepage="https://github.com/danth">Daniel Thwaites</author>
+    <author mail="danthwaites30@btinternet.com" homepage="https://danth.me">Daniel Thwaites</author>
     <namespace>Transfer</namespace>
     <category>files</category>
     <category>tools</category>
     <website>https://github.com/danth/transfer#readme</website>
     <bugs>https://github.com/danth/transfer/issues</bugs>
-    <screenshot>https://raw.githubusercontent.com/danth/transfer/master/img/screenshots/transfer.png</screenshot>
+    <screenshot small-thumbnail="https://raw.githubusercontent.com/danth/transfer/master/img/prompt.png">https://raw.githubusercontent.com/danth/transfer/master/img/prompt.png</screenshot>
     <dependencies>
         <nextcloud min-version="28" max-version="28"/>
     </dependencies>

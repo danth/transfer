@@ -1,29 +1,24 @@
 # Nextcloud Transfer app
 
-![Screenshot of the app.](img/screenshots/transfer.png)
-
-This app allows you to have a file from the Internet transferred directly into
-your Nextcloud, without first having to download it to your personal device in
-order to upload it. You simply enter the download link and the transfer happens
-on the server side, making it possible to leave downloads running in the
-background even when your personal computer is switched off.
+"Upload by link" functionality for Nextcloud. Transfer files using the full
+bandwidth available to your server. Avoid the need to leave your own device
+online to finish an upload.
 
 ## Usage instructions
 
-To start a download, select "Transfer file" from the menu.
+Select "Upload by link" from the new file menu.
 
-![Menu at the top of the files page.](img/instructions/menu.png)
+![Menu at the top of the files page.](img/menu.png)
 
-A prompt will appear for you to paste the download link. The file name and
-extension are filled in automatically when possible, but can be changed.
+A prompt will appear for you to paste the link. The file name and extension are
+detected automatically when possible, but can be changed.
 
-![The prompt appears in the middle of the screen.](img/instructions/prompt.png)
+![The prompt appears in the middle of the screen.](img/prompt.png)
 
-Once you click "Transfer", the download will be queued to run in the background.
-This should start within five minutes if your server is set up correctly.
+Once you click "Upload", the transfer will be queued to run in the background.
 
-If you want to reduce this delay, you will need to configure your server to
-trigger `cron.php` more often.
+Queued jobs should start within five minutes. If you want to reduce this delay,
+configure your server to trigger `cron.php` more often.
 
 ## Development information
 
@@ -38,12 +33,12 @@ The app can be built using the provided Makefile by running `make`.
 This requires the following programs to be installed:
 
 * `make`
-* `which`
 * `tar`: for building the archive
 * `npm`: for building the JavaScript bundle
 
-### Publishing to the App Store
+### Publishing
 
-First get an account for the [App Store](http://apps.nextcloud.com/) then run
-`make appstore`. The built archive will be located in `build/artifacts/appstore`
-and can then be uploaded to GitHub releases, signed, and uploaded to the App Store.
+1. Run `make dist`
+2. Upload to GitHub releases
+3. Sign the file using `openssl dgst -sha512 -sign /path/to/signing.key /path/to/app.tar.gz | openssl base64`
+4. Paste download link and signature into the [App Store](http://apps.nextcloud.com/)
