@@ -2,6 +2,7 @@ OC.L10N.register(
     "transfer",
     {
     "Files" : "Skedarët",
-    "Cancel" : "Anuloje"
+    "Link" : "Lidhje",
+    "Upload" : "Ngarkoni"
 },
 "nplurals=2; plural=(n != 1);");

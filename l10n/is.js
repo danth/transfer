@@ -3,8 +3,9 @@ OC.L10N.register(
     {
     "Files" : "Skrár",
     "Transfer" : "Færa",
+    "Link" : "Tengill",
     "File name" : "Skráarheiti",
     "Extension" : "Skráarending",
-    "Cancel" : "Hætta við"
+    "Upload" : "Senda inn"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

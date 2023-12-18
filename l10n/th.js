@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files" : "ไฟล์",
     "Transfer" : "โอนย้าย",
-    "Cancel" : "ยกเลิก"
+    "Link" : "ลิงก์",
+    "Upload" : "อัปโหลด"
 },
 "nplurals=1; plural=0;");

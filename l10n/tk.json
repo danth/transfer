@@ -1,5 +1,6 @@
 { "translations": {
     "Files" : "Faýllar",
-    "Cancel" : "ýatyrmak"
+    "Link" : "Baglanyşyk",
+    "Upload" : "Ýüklemek"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

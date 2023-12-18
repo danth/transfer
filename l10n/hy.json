@@ -1,5 +1,6 @@
 { "translations": {
     "Files" : "Ֆայլեր",
-    "Cancel" : "չեղարկել"
+    "Link" : "Հղում",
+    "Upload" : "Բեռնել"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

@@ -1,5 +1,6 @@
 { "translations": {
     "Files" : "файлууд",
-    "Cancel" : "Болиулах"
+    "Link" : "Холбоос",
+    "Upload" : "байршуулах"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

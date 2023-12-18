@@ -1,7 +1,9 @@
 { "translations": {
     "Files" : "Tệp",
     "Transfer" : "Truyền",
+    "Link" : "Liên kết",
     "File name" : "Tên tệp tin",
-    "Cancel" : "Hủy"
+    "Checksum" : "Giá trị tổng kiểm",
+    "Upload" : "Tải lên"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

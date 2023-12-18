@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files" : "Berkas",
     "Transfer" : "Transfer",
-    "Cancel" : "Batal"
+    "Link" : "Tautan",
+    "Upload" : "Unggah"
 },
 "nplurals=1; plural=0;");

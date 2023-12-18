@@ -1,26 +1,11 @@
 { "translations": {
-    "File transfers" : "File transfers",
     "Transfer of {url} failed" : "Transfer of {url} failed",
-    "{url} did not match the checksum provided" : "{url} did not match the checksum provided",
-    "Transfer of {url} was blocked" : "Transfer of {url} was blocked",
-    "Transfer of {url} was started" : "Transfer of {url} was started",
-    "{url} was transferred to {file}" : "{url} was transferred to {file}",
-    "A <strong>transfer failed</strong>" : "A <strong>transfer failed</strong>",
     "Files" : "فایل ها",
-    "A <strong>transfer</strong> was <strong>started</strong>" : "A <strong>transfer</strong> was <strong>started</strong>",
-    "A <strong>transfer succeeded</strong>" : "A <strong>transfer succeeded</strong>",
     "Transfer" : "انتقال",
     "Add a file to Nextcloud from a web link." : "Add a file to Nextcloud from a web link.",
-    "This app allows you to have a file from the Internet\n            transferred directly into your Nextcloud, without first having\n            to download it to your personal device in order to\n            upload it. You simply enter the download link and the\n            transfer happens on the server side, making it possible\n            to leave downloads running in the background even when\n            your personal computer is switched off." : "This app allows you to have a file from the Internet\n            transferred directly into your Nextcloud, without first having\n            to download it to your personal device in order to\n            upload it. You simply enter the download link and the\n            transfer happens on the server side, making it possible\n            to leave downloads running in the background even when\n            your personal computer is switched off.",
-    "Transfer file" : "Transfer file",
-    "Download link" : "Download link",
     "File name" : "نام فایل",
     "Extension" : "گسترش",
-    "If you have a checksum, enter it below." : "If you have a checksum, enter it below.",
-    "Hash" : "Hash",
-    "Cancel" : "منصرف شدن",
-    "Transfer queued to run in the background." : "Transfer queued to run in the background.",
-    "Could not queue the transfer. The server responded with status code {statusCode}." : "Could not queue the transfer. The server responded with status code {statusCode}.",
-    "Could not queue the transfer." : "Could not queue the transfer."
+    "Checksum" : "جمع‌آزما",
+    "Upload" : "بارگذاری"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

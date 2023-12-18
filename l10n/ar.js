@@ -1,28 +1,11 @@
 OC.L10N.register(
     "transfer",
     {
-    "File transfers" : "نقل الملفات ",
     "Transfer of {url} failed" : "إخفاق في نقل {url}",
-    "{url} did not match the checksum provided" : "{url} لم يتطابق مع المجموع الاختباري checksum المُعطى",
-    "Transfer of {url} was blocked" : "نقل الـ {url} كان موقوفاً",
-    "Transfer of {url} was started" : "بدأ نقل الـ {url} ",
-    "{url} was transferred to {file}" : "{url} تمّ نقله إلى {file}",
-    "A <strong>transfer failed</strong>" : "الـ <strong>أخفق نقله</strong>",
     "Files" : "الملفات",
-    "A <strong>transfer</strong> was <strong>started</strong>" : "الـ <strong>نقله <strong>بدأ</strong>",
-    "A <strong>transfer succeeded</strong>" : "الـ <strong>نجح نقله</strong>",
     "Transfer" : "نقل",
     "Add a file to Nextcloud from a web link." : "إضافة ملف إلى نكست كلاود من رابط وب",
-    "This app allows you to have a file from the Internet\n            transferred directly into your Nextcloud, without first having\n            to download it to your personal device in order to\n            upload it. You simply enter the download link and the\n            transfer happens on the server side, making it possible\n            to leave downloads running in the background even when\n            your personal computer is switched off." : "هذا التطبيق يسمح لك بنقل ملف من الإنترنت إلى نكست كلاود مباشرةً فلا تحتاج لتنزيله إلى جهازك او حاسوبك و من ثمّ رفعه إلى نكست كلاود.\nبكل بساطة، أدخل رابط التنزيل و سيبدأ التنزيل من جهة الخادوم. و هذا يسمح باستمرار عمليات التنزيل في الخلفية حتى بعد خروجك أو إطفاء حاسوبك.",
-    "Transfer file" : "أنقل ملف",
-    "Download link" : "رابط تنزيل",
     "File name" : "اسم ملف",
-    "Extension" : "امتداد",
-    "If you have a checksum, enter it below." : "إذا كان عندك مجموع اختباري checksim، أدخله أدناه.",
-    "Hash" : "مُستخلَص hash",
-    "Cancel" : "إلغاء",
-    "Transfer queued to run in the background." : "تمّ وضع عملية النقل في طابور عمليات الخلفية",
-    "Could not queue the transfer. The server responded with status code {statusCode}." : "لم يُمكن وضع عملية النقل في الطابور. استجابة الخادوم كانت بكود الحالة {statusCode}.",
-    "Could not queue the transfer." : "لم يُمكن وضع عملية النقل في الطابور."
+    "Extension" : "امتداد"
 },
 "nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");

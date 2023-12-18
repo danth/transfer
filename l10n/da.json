@@ -2,7 +2,6 @@
     "Files" : "Filer",
     "Transfer" : "Overførsel",
     "File name" : "Filnavn",
-    "Extension" : "Filtype",
-    "Cancel" : "Annullér"
+    "Extension" : "Filtype"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

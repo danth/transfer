@@ -3,8 +3,10 @@ OC.L10N.register(
     {
     "Files" : "Filer",
     "Transfer" : "Överför",
+    "Link" : "Länk",
     "File name" : "Filnamn",
     "Extension" : "Tillägg",
-    "Cancel" : "Avbryt"
+    "Checksum" : "Checksumma",
+    "Upload" : "Ladda upp"
 },
 "nplurals=2; plural=(n != 1);");

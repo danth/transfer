@@ -1,26 +1,12 @@
 { "translations": {
-    "File transfers" : "文件传输",
     "Transfer of {url} failed" : "{url}传输失败",
-    "{url} did not match the checksum provided" : "{url}与提供的校验码不符合",
-    "Transfer of {url} was blocked" : "{url}的传输被阻止",
-    "Transfer of {url} was started" : "{url}的传输已开始",
-    "{url} was transferred to {file}" : "{url}已传输为{file}",
-    "A <strong>transfer failed</strong>" : "1个<strong>传输失败</strong>",
     "Files" : "文件",
-    "A <strong>transfer</strong> was <strong>started</strong>" : "1个<strong>传输</strong><strong>已开始</strong>",
-    "A <strong>transfer succeeded</strong>" : "<strong>传输成功</strong>",
     "Transfer" : "传输",
     "Add a file to Nextcloud from a web link." : "将网页链接中的文件添加到Nextcloud。",
-    "This app allows you to have a file from the Internet\n            transferred directly into your Nextcloud, without first having\n            to download it to your personal device in order to\n            upload it. You simply enter the download link and the\n            transfer happens on the server side, making it possible\n            to leave downloads running in the background even when\n            your personal computer is switched off." : "此应用程序允许宁将来自互联网的文件\n            直接传输到Nextcloud，无需事先将其\n            下载到您的个人设备然后再上传。\n            您只需要输入下载链接，然后\n           传输将会在服务器段运行，这使得\n            下载持续在后台运行， 即便您的\n            个人电脑已经关机。",
-    "Transfer file" : "传输文件",
-    "Download link" : "下载链接",
+    "Link" : "链接",
     "File name" : "文件名",
     "Extension" : "扩展",
-    "If you have a checksum, enter it below." : "如果您有校验和，请在下方输入。",
-    "Hash" : "哈希值",
-    "Cancel" : "取消",
-    "Transfer queued to run in the background." : "传输已经加入后台运行队列。",
-    "Could not queue the transfer. The server responded with status code {statusCode}." : "无法将传输加入队列。服务器响应状态码{statusCode}。",
-    "Could not queue the transfer." : "无法将传输加入队列"
+    "Checksum" : "校验和",
+    "Upload" : "上传"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

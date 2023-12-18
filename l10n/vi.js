@@ -3,7 +3,9 @@ OC.L10N.register(
     {
     "Files" : "Tệp",
     "Transfer" : "Truyền",
+    "Link" : "Liên kết",
     "File name" : "Tên tệp tin",
-    "Cancel" : "Hủy"
+    "Checksum" : "Giá trị tổng kiểm",
+    "Upload" : "Tải lên"
 },
 "nplurals=1; plural=0;");

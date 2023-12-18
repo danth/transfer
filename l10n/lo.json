@@ -1,5 +1,6 @@
 { "translations": {
     "Files" : "ຟາຍ",
-    "Cancel" : "ຍົກເລີກ"
+    "Link" : "ລິງ",
+    "Upload" : "ອັບໂຫຼດ"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

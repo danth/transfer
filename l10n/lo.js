@@ -2,6 +2,7 @@ OC.L10N.register(
     "transfer",
     {
     "Files" : "ຟາຍ",
-    "Cancel" : "ຍົກເລີກ"
+    "Link" : "ລິງ",
+    "Upload" : "ອັບໂຫຼດ"
 },
 "nplurals=1; plural=0;");
