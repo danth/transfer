@@ -1,4 +1,5 @@
 { "translations": {
-    "Files" : "ফাইল"
+    "Files" : "ফাইল",
+    "Upload" : "আপলোড"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

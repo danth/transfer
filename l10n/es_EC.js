@@ -5,7 +5,10 @@ OC.L10N.register(
     "Files" : "Archivos",
     "Transfer" : "Transferencia",
     "Add a file to Nextcloud from a web link." : "Agregar un archivo a Nextcloud desde un enlace web.",
+    "Link" : "Liga",
     "File name" : "Nombre de archivo.",
-    "Extension" : "Extensión"
+    "Extension" : "Extensión",
+    "Checksum" : "suma de verificación",
+    "Upload" : "Cargar"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

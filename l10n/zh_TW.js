@@ -1,14 +1,28 @@
 OC.L10N.register(
     "transfer",
     {
+    "Upload by link" : "透過連結上傳",
     "Transfer of {url} failed" : "{url} 轉移失敗",
+    "Transfer of {url} failed because its checksum did not match" : "因為檢查碼不相符，{url} 轉移失敗",
+    "Transfer of {url} was blocked because it uses a restricted address" : "因為使用受限的地址，{url} 的轉移被封鎖",
+    "Transfer of {url} started" : "{url} 的轉移已開始",
+    "Saved from {url}" : "儲存自 {url}",
+    "{url} was saved to {file}" : "{url} 已儲存至 {file}",
+    "An upload by link was unsuccessful" : "透過連結上傳未成功",
     "Files" : "檔案",
+    "An upload by link is being processed" : "正在處理透過連結的上傳",
+    "An upload by link was successful" : "透過連結上傳成功",
     "Transfer" : "轉移",
     "Add a file to Nextcloud from a web link." : "從網路連結將檔案新增至 Nextcloud。",
+    "\"Upload by link\" functionality for Nextcloud. Transfer files\n            using the full bandwidth available to your server. Avoid the need to\n            leave your own device online to finish an upload." : "Nextcloud 的「透過連結上傳」功能。\n            使用伺服器可用的全部頻寬轉移檔案。\n            不需要讓自己的裝置維持在線上即可完成上傳。",
     "Link" : "連結",
     "File name" : "檔案名稱",
     "Extension" : "副檔名",
+    "Some websites provide a checksum in addition to the file. This is used after the transfer to verify that the file is not corrupted." : "有些網站除了檔案以外也提供檢查碼。這是在轉移後用於驗證檔案未損毀。",
     "Checksum" : "檢查碼",
-    "Upload" : "上傳"
+    "Upload" : "上傳",
+    "The upload is queued and will begin processing soon." : "上傳已排入佇列，很快就會開始處理。",
+    "Failed to add the upload to the queue. The server responded with status code {statusCode}." : "無法將上傳新增至佇列。伺服器以狀態碼 {statusCode} 回應。",
+    "Failed to add the upload to the queue." : "無法將上傳新增至佇列。"
 },
 "nplurals=1; plural=0;");

@@ -1,0 +1,8 @@
+OC.L10N.register(
+    "transfer",
+    {
+    "Files" : "Datnes",
+    "Link" : "Saite",
+    "Upload" : "Augšupielādēt"
+},
+"nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);");

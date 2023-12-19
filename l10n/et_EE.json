@@ -1,4 +1,7 @@
 { "translations": {
-    "Files" : "Failid"
+    "Files" : "Failid",
+    "Link" : "Link",
+    "Checksum" : "Kontrollsumma",
+    "Upload" : "Laadi üles"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

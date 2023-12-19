@@ -5,7 +5,10 @@ OC.L10N.register(
     "Files" : "Fitxategiak",
     "Transfer" : "Transferitu",
     "Add a file to Nextcloud from a web link." : "Gehitu fitxategi bat Nextcloud-era web-esteka batetik.",
+    "Link" : "Esteka",
     "File name" : "Fitxategi izena",
-    "Extension" : "Hedapena"
+    "Extension" : "Hedapena",
+    "Checksum" : "Egiaztapeneko batura",
+    "Upload" : "Igo"
 },
 "nplurals=2; plural=(n != 1);");

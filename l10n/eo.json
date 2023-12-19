@@ -1,6 +1,8 @@
 { "translations": {
     "Files" : "Dosieroj",
+    "Link" : "Ligilo",
     "File name" : "Dosiernomo",
-    "Extension" : "Dosiersufikso"
+    "Extension" : "Dosiersufikso",
+    "Upload" : "Alŝuti"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

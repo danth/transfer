@@ -1,4 +1,6 @@
 { "translations": {
-    "Extension" : "Estensión"
+    "Link" : "Enllaz",
+    "Extension" : "Estensión",
+    "Upload" : "Xubir"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

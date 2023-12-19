@@ -5,7 +5,10 @@ OC.L10N.register(
     "Files" : "Fitxers",
     "Transfer" : "Transferència",
     "Add a file to Nextcloud from a web link." : "Afegeix un fitxer a Nextcloud des d'un enllaç web.",
+    "Link" : "Enllaç",
     "File name" : "Nom del fitxer",
-    "Extension" : "Extensió"
+    "Extension" : "Extensió",
+    "Checksum" : "Resum de verificació",
+    "Upload" : "Puja"
 },
 "nplurals=2; plural=(n != 1);");

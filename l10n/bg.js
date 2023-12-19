@@ -5,7 +5,10 @@ OC.L10N.register(
     "Files" : "Файлове",
     "Transfer" : "Прехвърляне",
     "Add a file to Nextcloud from a web link." : "Добавете файл към Nextcloud от уеб връзка.",
+    "Link" : "Връзка",
     "File name" : "Име на файл",
-    "Extension" : "Разширение"
+    "Extension" : "Разширение",
+    "Checksum" : "Контролна сума",
+    "Upload" : "Качване"
 },
 "nplurals=2; plural=(n != 1);");
