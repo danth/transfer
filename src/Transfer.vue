@@ -74,13 +74,13 @@
     data() {
       return {
         TransferSvg,
-        visible: false,
-        currentDirectory: null,
         url: '',
         chosenName: '',
         chosenExtension: '',
         hashAlgo: null,
-        hash: ''
+        hash: '',
+        currentDirectory: null,
+        visible: false
       }
     },
 
@@ -122,8 +122,13 @@
 
     methods: {
       open(context) {
-        this.visible = true
+        this.url = ''
+        this.chosenName = ''
+        this.chosenExtension = ''
+        this.hashAlgo = null
+        this.hash = ''
         this.currentDirectory = context.path
+        this.visible = true
       },
 
       close() {
