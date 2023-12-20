@@ -1,12 +1,26 @@
 { "translations": {
+    "Upload by link" : "Enviar por link",
     "Transfer of {url} failed" : "Falha na transferência de {url}",
+    "Transfer of {url} failed because its checksum did not match" : "A transferência de {url} falhou porque a soma de verificação não correspondeu",
+    "Transfer of {url} was blocked because it uses a restricted address" : "A transferência de {url} foi bloqueada porque utiliza um endereço restrito",
+    "Transfer of {url} started" : "Transferência de {url} iniciada",
+    "Saved from {url}" : "Salvo de {url}",
+    "{url} was saved to {file}" : "{url} foi salvo em {file}",
+    "An upload by link was unsuccessful" : "Um upload por link não foi bem sucedido",
     "Files" : "Arquivos",
+    "An upload by link is being processed" : "Um upload por link está sendo processado",
+    "An upload by link was successful" : "Um upload por link foi bem-sucedido",
     "Transfer" : "Transferir",
     "Add a file to Nextcloud from a web link." : "Adicione um arquivo ao Nextcloud a partir de um link da web.",
+    "\"Upload by link\" functionality for Nextcloud. Transfer files\n            using the full bandwidth available to your server. Avoid the need to\n            leave your own device online to finish an upload." : "Funcionalidade \"Upload por link\" para Nextcloud. Transferir arquivos \nusando toda a largura de banda disponível para o seu servidor. Evite a necessidade de \ndeixar seu próprio dispositivo on-line para concluir um upload.",
     "Link" : "Link",
     "File name" : "Nome do arquivo",
     "Extension" : "Extensão",
+    "Some websites provide a checksum in addition to the file. This is used after the transfer to verify that the file is not corrupted." : "Alguns sites fornecem uma soma de verificação além do arquivo. Isso é usado após a transferência para verificar se o arquivo não está corrompido.",
     "Checksum" : "Checksum",
-    "Upload" : "Enviar"
+    "Upload" : "Enviar",
+    "The upload is queued and will begin processing soon." : "O upload está na fila e começará a ser processado em breve.",
+    "Failed to add the upload to the queue. The server responded with status code {statusCode}." : "Falha ao adicionar o upload à fila. O servidor respondeu com o código de status {statusCode}.",
+    "Failed to add the upload to the queue." : "Falha ao adicionar o upload à fila."
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
