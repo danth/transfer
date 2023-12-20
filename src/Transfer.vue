@@ -123,7 +123,7 @@
     methods: {
       open(context) {
         this.visible = true
-        this.currentDirectory = context.dirname
+        this.currentDirectory = context.path
       },
 
       close() {
