@@ -2,6 +2,7 @@
     "Files" : "Berkas",
     "Transfer" : "Transfer",
     "Link" : "Tautan",
+    "Checksum" : "checksum",
     "Upload" : "Unggah"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
