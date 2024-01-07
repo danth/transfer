@@ -5,6 +5,7 @@ OC.L10N.register(
     "Files" : "فایل ها",
     "Transfer" : "انتقال",
     "Add a file to Nextcloud from a web link." : "Add a file to Nextcloud from a web link.",
+    "Link" : "پیوند",
     "File name" : "نام فایل",
     "Extension" : "گسترش",
     "Checksum" : "جمع‌آزما",

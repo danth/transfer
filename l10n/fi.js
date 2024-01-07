@@ -5,6 +5,7 @@ OC.L10N.register(
     "Files" : "Tiedostot",
     "Transfer" : "Siirrä",
     "Add a file to Nextcloud from a web link." : "Lisää tiedosto Nextcloudiin verkkolinkistä.",
+    "Link" : "Linkki",
     "File name" : "Tiedostonimi",
     "Extension" : "Tiedostopääte",
     "Checksum" : "Tarkistussumma",
