@@ -1,6 +1,8 @@
 { "translations": {
     "Files" : "Ficheros",
+    "Transfer" : "Tresferir",
     "Link" : "Enllaz",
+    "File name" : "Nome del ficheru",
     "Extension" : "Estensión",
     "Upload" : "Xubir"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

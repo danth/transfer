@@ -2,7 +2,9 @@ OC.L10N.register(
     "transfer",
     {
     "Files" : "Ficheros",
+    "Transfer" : "Tresferir",
     "Link" : "Enllaz",
+    "File name" : "Nome del ficheru",
     "Extension" : "Estensión",
     "Upload" : "Xubir"
 },
