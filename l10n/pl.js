@@ -3,11 +3,14 @@ OC.L10N.register(
     {
     "Transfer of {url} failed" : "Pobieranie adresu {url} nie powiodło się",
     "Files" : "Pliki",
+    "An upload by link is being processed" : "Trwa przetwarzanie przesyłania za pomocą odnośnika",
+    "An upload by link was successful" : "Przesyłanie za pomocą odnośnika powiodło się",
     "Transfer" : "Przenieś",
     "Add a file to Nextcloud from a web link." : "Dodaj plik do Nextcloud z linku internetowego.",
     "Link" : "Odnośnik",
     "File name" : "Nazwa pliku",
     "Extension" : "Rozszerzenie",
+    "Some websites provide a checksum in addition to the file. This is used after the transfer to verify that the file is not corrupted." : "Niektóre witryny internetowe oprócz pliku udostępniają sumę kontrolną. Jest to wykorzystywane po przesłaniu w celu sprawdzenia, czy plik nie jest uszkodzony.",
     "Checksum" : "Suma kontrolna",
     "Upload" : "Wyślij"
 },
