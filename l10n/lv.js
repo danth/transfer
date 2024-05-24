@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Files" : "Datnes",
     "Link" : "Saite",
+    "File name" : "Datnes nosaukums",
     "Upload" : "Augšupielādēt"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);");
