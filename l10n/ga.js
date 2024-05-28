@@ -2,6 +2,8 @@ OC.L10N.register(
     "transfer",
     {
     "Files" : "Comhaid",
+    "Transfer" : "Aistriú",
+    "Link" : "Nasc",
     "Extension" : "Síneadh",
     "Upload" : "Uaslódáil"
 },
