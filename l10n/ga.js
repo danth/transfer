@@ -1,12 +1,28 @@
 OC.L10N.register(
     "transfer",
     {
+    "Upload by link" : "Uaslódáil trí nasc",
+    "Transfer of {url} failed" : "Theip ar aistriú {url}",
+    "Transfer of {url} failed because its checksum did not match" : "Theip ar aistriú {url} toisc nár mheaitseáil a sheic",
+    "Transfer of {url} was blocked because it uses a restricted address" : "Cuireadh bac ar aistriú {url} toisc go n-úsáideann sé seoladh srianta",
+    "Transfer of {url} started" : "Cuireadh tús le haistriú {url}",
+    "Saved from {url}" : "Sábháilte ó {url}",
+    "{url} was saved to {file}" : "Sábháladh {url} chuig {file}",
+    "An upload by link was unsuccessful" : "Níor éirigh le huaslódáil trí nasc",
     "Files" : "Comhaid",
+    "An upload by link is being processed" : "Tá uaslódáil trí nasc á phróiseáil",
+    "An upload by link was successful" : "D'éirigh le huaslódáil trí nasc",
     "Transfer" : "Aistriú",
+    "Add a file to Nextcloud from a web link." : "Cuir comhad le Nextcloud ó nasc gréasáin.",
+    "\"Upload by link\" functionality for Nextcloud. Transfer files\n            using the full bandwidth available to your server. Avoid the need to\n            leave your own device online to finish an upload." : "Feidhmiúlacht \"Uaslódáil trí nasc\" le haghaidh Nextcloud. Comhaid a aistriú\nag baint úsáide as an bandaleithead iomlán atá ar fáil do do fhreastalaí. Seachain an gá atá le\nfág do ghléas féin ar líne chun uaslódáil a chríochnú.",
     "Link" : "Nasc",
     "File name" : "Ainm comhaid",
     "Extension" : "Síneadh",
+    "Some websites provide a checksum in addition to the file. This is used after the transfer to verify that the file is not corrupted." : "Soláthraíonn roinnt suíomhanna gréasáin seiceam chomh maith leis an gcomhad. Úsáidtear é seo tar éis an aistrithe chun a fhíorú nach bhfuil an comhad truaillithe.",
     "Checksum" : "Seiceam",
-    "Upload" : "Uaslódáil"
+    "Upload" : "Uaslódáil",
+    "The upload is queued and will begin processing soon." : "Tá an t-uaslódáil i scuaine agus cuirfear tús leis an bpróiseáil go luath.",
+    "Failed to add the upload to the queue. The server responded with status code {statusCode}." : "Theip ar an uaslódáil a chur leis an scuaine. D'fhreagair an freastalaí le cód stádais {statusCode}.",
+    "Failed to add the upload to the queue." : "Theip ar an uaslódáil a chur leis an scuaine."
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");
