@@ -9,6 +9,7 @@ OC.L10N.register(
     "File name" : "Nome de ficheiro",
     "Extension" : "Extensión",
     "Checksum" : "Suma de comprobación",
-    "Upload" : "Enviar"
+    "Upload" : "Enviar",
+    "Failed to add the upload to the queue." : "Produciuse un fallo ao engadir o envío na cola."
 },
 "nplurals=2; plural=(n != 1);");
