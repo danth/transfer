@@ -34,6 +34,7 @@ OC.L10N.register(
     "Transfer failed." : "Överföringen misslyckades.",
     "Cancelling…" : "Avbryter …",
     "The transfer could not be started." : "Det gick inte att starta överföringen.",
+    "The file has been transferred." : "Filen har överförts.",
     "The transfer is queued and will begin processing soon." : "Överföringen har köats och börjar behandlas snart.",
     "The transfer could not be queued." : "Det gick inte att köa överföringen.",
     "No active transfers." : "Inga aktiva överföringar.",
