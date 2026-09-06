@@ -1,4 +1,4 @@
-NODE_IMAGE ?= docker.io/library/node:20
+NODE_IMAGE ?= docker.io/library/node:24
 
 .PHONY: build
 build:
