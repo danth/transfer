@@ -11,8 +11,8 @@
 	</description>
 	<version>1.0.1</version>
 	<licence>agpl</licence>
+	<author mail="beleon-transfer@mailbox.org">Leon Becker</author>
 	<author mail="danth@danth.me" homepage="https://danth.me">Daniel Thwaites</author>
-	<author>Leon Becker</author>
 	<namespace>Transfer</namespace>
 	<category>files</category>
 	<category>tools</category>
