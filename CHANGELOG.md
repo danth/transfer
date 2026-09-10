@@ -4,6 +4,25 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 follows [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-09-10
+
+### Changed
+- Leon Becker, the current maintainer, is now listed first in the app metadata
+  with a contact address. Daniel Thwaites, the original author, is listed
+  second. Agreed in #264.
+
+### Translations
+- Updated translations from Transifex (da, en_GB, fr, ga, lb, sk, sv, tr, uk,
+  zh_HK).
+
+### Dependencies
+- Bundled libraries refreshed within their existing ranges: axios 1.16.0 to
+  1.20.0, dompurify 3.4.11 to 3.4.14, fast-xml-parser 5.7.3 to 5.11.1,
+  brace-expansion 2.1.0 to 2.1.4 (#269, not reachable from the shipped code).
+- @nextcloud/vite-config 1.7.2 to 2.5.4. Build tooling only, the bundle is
+  unchanged apart from license headers now being emitted per chunk.
+- The frontend is now built with Node 24. Node 20 is end of life.
+
 ## [1.0.1] - 2026-08-03
 
 ### Fixed
